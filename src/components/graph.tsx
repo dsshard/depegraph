@@ -390,7 +390,7 @@ export const Graph = memo(function GraphMemo(props: {
         d3
           .forceLink<NodeDatum, LinkDatum>(filteredLinks)
           .id((d: NodeDatum) => d.id)
-          .distance((link) => {
+          .distance(() => {
             return 200
           })
           .strength(1),

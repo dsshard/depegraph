@@ -3,7 +3,6 @@
 const { Command } = require('commander')
 const path = require('node:path')
 const { spawn } = require('node:child_process')
-const axios = require('axios')
 
 const program = new Command()
 
