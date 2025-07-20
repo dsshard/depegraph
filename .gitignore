@@ -38,6 +38,7 @@ yarn-error.log*
 .idea/
 *.swp
 *.swo
+.next/cache
 
 # Logs
 logs
