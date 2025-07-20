@@ -15,7 +15,7 @@ program
     const folderPath = path.resolve(folder)
     const port = options.port
 
-    const server = spawn('npx', ['next', 'dev', '--port', '8831'], {
+    const server = spawn('npx', ['next', 'start', '--port', '8831'], {
       cwd: path.join(__dirname, '../'),
       stdio: 'inherit',
       detached: false,

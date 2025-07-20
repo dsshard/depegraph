@@ -1,1 +1,2517 @@
-(()=>{var a={};a.id=985,a.ids=[985],a.modules={136:a=>{"use strict";a.exports=require("@yarnpkg/lockfile")},1254:a=>{(()=>{"use strict";"undefined"!=typeof __nccwpck_require__&&(__nccwpck_require__.ab=__dirname+"/");var b={};(()=>{b.parse=function(b,c){if("string"!=typeof b)throw TypeError("argument str must be a string");for(var e={},f=b.split(d),g=(c||{}).decode||a,h=0;h<f.length;h++){var i=f[h],j=i.indexOf("=");if(!(j<0)){var k=i.substr(0,j).trim(),l=i.substr(++j,i.length).trim();'"'==l[0]&&(l=l.slice(1,-1)),void 0==e[k]&&(e[k]=function(a,b){try{return b(a)}catch(b){return a}}(l,g))}}return e},b.serialize=function(a,b,d){var f=d||{},g=f.encode||c;if("function"!=typeof g)throw TypeError("option encode is invalid");if(!e.test(a))throw TypeError("argument name is invalid");var h=g(b);if(h&&!e.test(h))throw TypeError("argument val is invalid");var i=a+"="+h;if(null!=f.maxAge){var j=f.maxAge-0;if(isNaN(j)||!isFinite(j))throw TypeError("option maxAge is invalid");i+="; Max-Age="+Math.floor(j)}if(f.domain){if(!e.test(f.domain))throw TypeError("option domain is invalid");i+="; Domain="+f.domain}if(f.path){if(!e.test(f.path))throw TypeError("option path is invalid");i+="; Path="+f.path}if(f.expires){if("function"!=typeof f.expires.toUTCString)throw TypeError("option expires is invalid");i+="; Expires="+f.expires.toUTCString()}if(f.httpOnly&&(i+="; HttpOnly"),f.secure&&(i+="; Secure"),f.sameSite)switch("string"==typeof f.sameSite?f.sameSite.toLowerCase():f.sameSite){case!0:case"strict":i+="; SameSite=Strict";break;case"lax":i+="; SameSite=Lax";break;case"none":i+="; SameSite=None";break;default:throw TypeError("option sameSite is invalid")}return i};var a=decodeURIComponent,c=encodeURIComponent,d=/; */,e=/^[\u0009\u0020-\u007e\u0080-\u00ff]+$/})(),a.exports=b})()},1518:(a,b)=>{"use strict";Object.defineProperty(b,"__esModule",{value:!0}),Object.defineProperty(b,"ReflectAdapter",{enumerable:!0,get:function(){return c}});class c{static get(a,b,c){let d=Reflect.get(a,b,c);return"function"==typeof d?d.bind(a):d}static set(a,b,c,d){return Reflect.set(a,b,c,d)}static has(a,b){return Reflect.has(a,b)}static deleteProperty(a,b){return Reflect.deleteProperty(a,b)}}},1922:(a,b)=>{"use strict";Object.defineProperty(b,"__esModule",{value:!0}),!function(a,b){for(var c in b)Object.defineProperty(a,c,{enumerable:!0,get:b[c]})}(b,{ACTION_SUFFIX:function(){return l},APP_DIR_ALIAS:function(){return F},CACHE_ONE_YEAR:function(){return x},DOT_NEXT_ALIAS:function(){return D},ESLINT_DEFAULT_DIRS:function(){return Z},GSP_NO_RETURNED_VALUE:function(){return T},GSSP_COMPONENT_MEMBER_ERROR:function(){return W},GSSP_NO_RETURNED_VALUE:function(){return U},INFINITE_CACHE:function(){return y},INSTRUMENTATION_HOOK_FILENAME:function(){return B},MATCHED_PATH_HEADER:function(){return e},MIDDLEWARE_FILENAME:function(){return z},MIDDLEWARE_LOCATION_REGEXP:function(){return A},NEXT_BODY_SUFFIX:function(){return o},NEXT_CACHE_IMPLICIT_TAG_ID:function(){return w},NEXT_CACHE_REVALIDATED_TAGS_HEADER:function(){return q},NEXT_CACHE_REVALIDATE_TAG_TOKEN_HEADER:function(){return r},NEXT_CACHE_SOFT_TAG_MAX_LENGTH:function(){return v},NEXT_CACHE_TAGS_HEADER:function(){return p},NEXT_CACHE_TAG_MAX_ITEMS:function(){return t},NEXT_CACHE_TAG_MAX_LENGTH:function(){return u},NEXT_DATA_SUFFIX:function(){return m},NEXT_INTERCEPTION_MARKER_PREFIX:function(){return d},NEXT_META_SUFFIX:function(){return n},NEXT_QUERY_PARAM_PREFIX:function(){return c},NEXT_RESUME_HEADER:function(){return s},NON_STANDARD_NODE_ENV:function(){return X},PAGES_DIR_ALIAS:function(){return C},PRERENDER_REVALIDATE_HEADER:function(){return f},PRERENDER_REVALIDATE_ONLY_GENERATED_HEADER:function(){return g},PUBLIC_DIR_MIDDLEWARE_CONFLICT:function(){return N},ROOT_DIR_ALIAS:function(){return E},RSC_ACTION_CLIENT_WRAPPER_ALIAS:function(){return M},RSC_ACTION_ENCRYPTION_ALIAS:function(){return L},RSC_ACTION_PROXY_ALIAS:function(){return I},RSC_ACTION_VALIDATE_ALIAS:function(){return H},RSC_CACHE_WRAPPER_ALIAS:function(){return J},RSC_DYNAMIC_IMPORT_WRAPPER_ALIAS:function(){return K},RSC_MOD_REF_PROXY_ALIAS:function(){return G},RSC_PREFETCH_SUFFIX:function(){return h},RSC_SEGMENTS_DIR_SUFFIX:function(){return i},RSC_SEGMENT_SUFFIX:function(){return j},RSC_SUFFIX:function(){return k},SERVER_PROPS_EXPORT_ERROR:function(){return S},SERVER_PROPS_GET_INIT_PROPS_CONFLICT:function(){return P},SERVER_PROPS_SSG_CONFLICT:function(){return Q},SERVER_RUNTIME:function(){return $},SSG_FALLBACK_EXPORT_ERROR:function(){return Y},SSG_GET_INITIAL_PROPS_CONFLICT:function(){return O},STATIC_STATUS_PAGE_GET_INITIAL_PROPS_ERROR:function(){return R},UNSTABLE_REVALIDATE_RENAME_ERROR:function(){return V},WEBPACK_LAYERS:function(){return aa},WEBPACK_RESOURCE_QUERIES:function(){return ab}});let c="nxtP",d="nxtI",e="x-matched-path",f="x-prerender-revalidate",g="x-prerender-revalidate-if-generated",h=".prefetch.rsc",i=".segments",j=".segment.rsc",k=".rsc",l=".action",m=".json",n=".meta",o=".body",p="x-next-cache-tags",q="x-next-revalidated-tags",r="x-next-revalidate-tag-token",s="next-resume",t=128,u=256,v=1024,w="_N_T_",x=31536e3,y=0xfffffffe,z="middleware",A=`(?:src/)?${z}`,B="instrumentation",C="private-next-pages",D="private-dot-next",E="private-next-root-dir",F="private-next-app-dir",G="private-next-rsc-mod-ref-proxy",H="private-next-rsc-action-validate",I="private-next-rsc-server-reference",J="private-next-rsc-cache-wrapper",K="private-next-rsc-track-dynamic-import",L="private-next-rsc-action-encryption",M="private-next-rsc-action-client-wrapper",N="You can not have a '_next' folder inside of your public folder. This conflicts with the internal '/_next' route. https://nextjs.org/docs/messages/public-next-folder-conflict",O="You can not use getInitialProps with getStaticProps. To use SSG, please remove your getInitialProps",P="You can not use getInitialProps with getServerSideProps. Please remove getInitialProps.",Q="You can not use getStaticProps or getStaticPaths with getServerSideProps. To use SSG, please remove getServerSideProps",R="can not have getInitialProps/getServerSideProps, https://nextjs.org/docs/messages/404-get-initial-props",S="pages with `getServerSideProps` can not be exported. See more info here: https://nextjs.org/docs/messages/gssp-export",T="Your `getStaticProps` function did not return an object. Did you forget to add a `return`?",U="Your `getServerSideProps` function did not return an object. Did you forget to add a `return`?",V="The `unstable_revalidate` property is available for general use.\nPlease use `revalidate` instead.",W="can not be attached to a page's component and must be exported from the page. See more info here: https://nextjs.org/docs/messages/gssp-component-member",X='You are using a non-standard "NODE_ENV" value in your environment. This creates inconsistencies in the project and is strongly advised against. Read more: https://nextjs.org/docs/messages/non-standard-node-env',Y="Pages with `fallback` enabled in `getStaticPaths` can not be exported. See more info here: https://nextjs.org/docs/messages/ssg-fallback-true-export",Z=["app","pages","components","lib","src"],$={edge:"edge",experimentalEdge:"experimental-edge",nodejs:"nodejs"},_={shared:"shared",reactServerComponents:"rsc",serverSideRendering:"ssr",actionBrowser:"action-browser",apiNode:"api-node",apiEdge:"api-edge",middleware:"middleware",instrument:"instrument",edgeAsset:"edge-asset",appPagesBrowser:"app-pages-browser",pagesDirBrowser:"pages-dir-browser",pagesDirEdge:"pages-dir-edge",pagesDirNode:"pages-dir-node"},aa={..._,GROUP:{builtinReact:[_.reactServerComponents,_.actionBrowser],serverOnly:[_.reactServerComponents,_.actionBrowser,_.instrument,_.middleware],neutralTarget:[_.apiNode,_.apiEdge],clientOnly:[_.serverSideRendering,_.appPagesBrowser],bundled:[_.reactServerComponents,_.actionBrowser,_.serverSideRendering,_.appPagesBrowser,_.shared,_.instrument,_.middleware],appPages:[_.reactServerComponents,_.serverSideRendering,_.appPagesBrowser,_.actionBrowser]}},ab={edgeSSREntry:"__next_edge_ssr_entry__",metadata:"__next_metadata__",metadataRoute:"__next_metadata_route__",metadataImageMeta:"__next_metadata_image_meta__"}},2464:(a,b,c)=>{"use strict";c.a(a,async(a,d)=>{try{c.r(b),c.d(b,{config:()=>o,default:()=>n,handler:()=>m});var e=c(9046),f=c(8667),g=c(3480),h=c(6435),i=c(2644),j=c(8112),k=c(8766),l=a([i]);i=(l.then?(await l)():l)[0];let n=(0,h.M)(i,"default"),o=(0,h.M)(i,"config"),p=new g.PagesAPIRouteModule({definition:{kind:f.A.PAGES_API,page:"/api/analyze",pathname:"/api/analyze",bundlePath:"",filename:""},userland:i,distDir:".next",projectDir:""});async function m(a,b,c){let d=await p.prepare(a,b,{srcPage:"/api/analyze"});if(!d){b.statusCode=400,b.end("Bad Request"),null==c.waitUntil||c.waitUntil.call(c,Promise.resolve());return}let{query:f,params:g,prerenderManifest:h}=d;try{let c=a.method||"GET",d=(0,j.getTracer)(),e=d.getActiveScopeSpan(),i=p.instrumentationOnRequestError.bind(p),l=async e=>p.render(a,b,{query:{...f,...g},params:g,allowedRevalidateHeaderKeys:void 0,multiZoneDraftMode:!0,trustHostHeader:void 0,previewProps:h.preview,propagateError:!1,dev:p.isDev,page:"/api/analyze",projectDir:"",onError:(...b)=>i(a,...b)}).finally(()=>{if(!e)return;e.setAttributes({"http.status_code":b.statusCode,"next.rsc":!1});let f=d.getRootSpanAttributes();if(!f)return;if(f.get("next.span_type")!==k.BaseServerSpan.handleRequest)return void console.warn(`Unexpected root span type '${f.get("next.span_type")}'. Please report this Next.js issue https://github.com/vercel/next.js`);let g=f.get("next.route");if(g){let a=`${c} ${g}`;e.setAttributes({"next.route":g,"http.route":g,"next.span_name":a}),e.updateName(a)}else e.updateName(`${c} ${a.url}`)});e?await l(e):await d.withPropagatedContext(a.headers,()=>d.trace(k.BaseServerSpan.handleRequest,{spanName:`${c} ${a.url}`,kind:j.SpanKind.SERVER,attributes:{"http.method":c,"http.target":a.url}},l))}catch(a){if(p.isDev)throw a;(0,e.sendError)(b,500,"Internal Server Error")}finally{null==c.waitUntil||c.waitUntil.call(c,Promise.resolve())}}d()}catch(a){d(a)}})},2469:(a,b,c)=>{"use strict";c.a(a,async(a,d)=>{try{c.d(b,{o:()=>l});var e=c(3024),f=c(6760),g=c(4e3),h=c.n(g),i=c(136),j=c(9332),k=a([j]);j=(k.then?(await k)():k)[0];class l{constructor(a){this.rootPath=a}async parseProject(){let a=await this.findPackages(),b=this.detectWorkspaces(a),c=new Map,d=new Map;return await this.analyzeLockFiles(c,d),await this.scanNodeModules(c,d),{packages:a,workspaces:b,installedPackages:c,dependencyTree:d}}async findPackages(){let a=await (0,j.glob)("**/package.json",{cwd:this.rootPath,ignore:["**/node_modules/**","**/.next/**","**/dist/**","**/build/**","**/coverage/**"]}),b=[];for(let c of a){let a=f.join(this.rootPath,c);try{let c=e.readFileSync(a,"utf8"),d=JSON.parse(c);b.push({name:d.name||f.basename(f.dirname(a)),version:d.version||"1.0.0",path:a,dependencies:d.dependencies||{},devDependencies:d.devDependencies||{},peerDependencies:d.peerDependencies||{},optionalDependencies:d.optionalDependencies||{}})}catch(a){}}return b}detectWorkspaces(a){let b=new Map;for(let c of a){let a=f.dirname(c.path),d=f.relative(this.rootPath,a),e="";if(""===d)e="root";else{let a=d.split(f.sep);e=1===a.length?"root":a[0]}b.has(e)||b.set(e,[]),b.get(e)?.push(c)}return Array.from(b.entries()).map(([a,b])=>({name:"root"===a?"Root":a.charAt(0).toUpperCase()+a.slice(1),path:"root"===a?this.rootPath:f.join(this.rootPath,a),packages:b.map(a=>a.name)}))}async analyzeLockFiles(a,b){for(let c of(await this.findLockFiles()))"yarn"===c.type?await this.analyzeYarnLockWithLibrary(c.path,a,b):"npm"===c.type&&await this.analyzePackageLockWithArborist(c.path,a,b)}async findLockFiles(){let a=[];for(let b of(await (0,j.glob)("**/yarn.lock",{cwd:this.rootPath,ignore:["**/node_modules/**"]})))a.push({path:f.join(this.rootPath,b),type:"yarn"});for(let b of(await (0,j.glob)("**/package-lock.json",{cwd:this.rootPath,ignore:["**/node_modules/**"]})))a.push({path:f.join(this.rootPath,b),type:"npm"});return a}async analyzeYarnLockWithLibrary(a,b,c){try{let d=e.readFileSync(a,"utf8"),f=i.parse(d);if("success"!==f.type)return;for(let[a,d]of Object.entries(f.object)){let e=this.extractPackageNameFromYarnKey(a);if(!e)continue;let f=d.version||"1.0.0";b.has(e)||b.set(e,{version:f});let g=d.dependencies||{};if(Object.keys(g).length>0){let a=new Set;for(let b of Object.keys(g)){let c=this.cleanPackageName(b);c&&c!==e&&a.add(c)}a.size>0&&c.set(e,a)}let h=d.optionalDependencies||{};if(Object.keys(h).length>0){let a=c.get(e)||new Set;for(let b of Object.keys(h)){let c=this.cleanPackageName(b);c&&c!==e&&a.add(c)}c.set(e,a)}}}catch(a){}}async analyzePackageLockWithArborist(a,b,c){try{let d=f.dirname(a),e=new(h())({path:d}),g=await e.loadActual();for(let a of g.inventory.values()){if(!a.name||a.name===g.name)continue;let d=a.name,e=a.version||"1.0.0";b.has(d)||b.set(d,{version:e});let f=new Set;for(let b of a.edgesOut.values())b?.to?.name&&b.to.name!==d&&f.add(b.to.name);f.size>0&&c.set(d,f)}}catch(a){}}extractPackageNameFromYarnKey(a){try{let b=a.replace(/"/g,"");if(b.startsWith("@")){let a=b.match(/^(@[^/]+\/[^@]+)@/);return a?a[1]:null}let c=b.indexOf("@");if(c>0)return b.substring(0,c);return b.includes("@")?null:b}catch(a){return null}}cleanPackageName(a){return a.replace(/[<>=^~].*$/,"").trim()}async scanNodeModules(a,b){for(let c of(await (0,j.glob)("**/node_modules",{cwd:this.rootPath,ignore:["**/node_modules/**/node_modules/**"]}))){let d=f.join(this.rootPath,c);await this.scanSingleNodeModules(d,a,b)}}async scanSingleNodeModules(a,b,c){try{for(let d of e.readdirSync(a,{withFileTypes:!0}))d.isDirectory()&&!d.name.startsWith(".")&&(d.name.startsWith("@")?await this.processScopedPackage(a,d.name,b,c):await this.processRegularPackage(a,d.name,b,c))}catch(a){}}async processScopedPackage(a,b,c,d){let g=f.join(a,b);try{for(let a of e.readdirSync(g,{withFileTypes:!0}))if(a.isDirectory()){let e=`${b}/${a.name}`,h=f.join(g,a.name);await this.processPackageJson(e,h,c,d)}}catch(a){}}async processRegularPackage(a,b,c,d){let e=f.join(a,b);await this.processPackageJson(b,e,c,d)}async processPackageJson(a,b,c,d){try{let g=f.join(b,"package.json");if(e.existsSync(g)){let b=JSON.parse(e.readFileSync(g,"utf8")),f=b.version||"1.0.0";if(c.has(a)||c.set(a,{version:f}),!d.has(a)){let c={...b.dependencies,...b.optionalDependencies};if(Object.keys(c).length>0){let b=new Set;Object.keys(c).forEach(a=>{let c=this.cleanPackageName(a);c&&b.add(c)}),b.size>0&&d.set(a,b)}}}}catch(a){}}}d()}catch(a){d(a)}})},2644:(a,b,c)=>{"use strict";c.a(a,async(a,d)=>{try{c.r(b),c.d(b,{config:()=>i,default:()=>h});var e=c(3024),f=c(8215),g=a([f]);f=(g.then?(await g)():g)[0];let i={api:{bodyParser:!0}};async function h(a,b){if("POST"!==a.method)return b.status(405).json({error:"Method not allowed"});let c=a.query;try{let a=Array.isArray(c.folder)?c.folder[0]:c.folder;if(!a)return b.status(400).json({error:"Project path is required"});if(!e.existsSync(a))return b.status(400).json({error:"Project path does not exist"});let d=new f.Q(a),g=await d.buildGraph();b.status(200).json(g)}catch(a){b.status(500).json({error:"Failed to analyze project",details:a instanceof Error?a.message:String(a)})}}d()}catch(a){d(a)}})},3024:a=>{"use strict";a.exports=require("node:fs")},3176:a=>{(()=>{"use strict";var b={491:(a,b,c)=>{Object.defineProperty(b,"__esModule",{value:!0}),b.ContextAPI=void 0;let d=c(223),e=c(172),f=c(930),g="context",h=new d.NoopContextManager;class i{constructor(){}static getInstance(){return this._instance||(this._instance=new i),this._instance}setGlobalContextManager(a){return(0,e.registerGlobal)(g,a,f.DiagAPI.instance())}active(){return this._getContextManager().active()}with(a,b,c,...d){return this._getContextManager().with(a,b,c,...d)}bind(a,b){return this._getContextManager().bind(a,b)}_getContextManager(){return(0,e.getGlobal)(g)||h}disable(){this._getContextManager().disable(),(0,e.unregisterGlobal)(g,f.DiagAPI.instance())}}b.ContextAPI=i},930:(a,b,c)=>{Object.defineProperty(b,"__esModule",{value:!0}),b.DiagAPI=void 0;let d=c(56),e=c(912),f=c(957),g=c(172);class h{constructor(){function a(a){return function(...b){let c=(0,g.getGlobal)("diag");if(c)return c[a](...b)}}let b=this;b.setLogger=(a,c={logLevel:f.DiagLogLevel.INFO})=>{var d,h,i;if(a===b){let a=Error("Cannot use diag as the logger for itself. Please use a DiagLogger implementation like ConsoleDiagLogger or a custom implementation");return b.error(null!=(d=a.stack)?d:a.message),!1}"number"==typeof c&&(c={logLevel:c});let j=(0,g.getGlobal)("diag"),k=(0,e.createLogLevelDiagLogger)(null!=(h=c.logLevel)?h:f.DiagLogLevel.INFO,a);if(j&&!c.suppressOverrideMessage){let a=null!=(i=Error().stack)?i:"<failed to generate stacktrace>";j.warn(`Current logger will be overwritten from ${a}`),k.warn(`Current logger will overwrite one already registered from ${a}`)}return(0,g.registerGlobal)("diag",k,b,!0)},b.disable=()=>{(0,g.unregisterGlobal)("diag",b)},b.createComponentLogger=a=>new d.DiagComponentLogger(a),b.verbose=a("verbose"),b.debug=a("debug"),b.info=a("info"),b.warn=a("warn"),b.error=a("error")}static instance(){return this._instance||(this._instance=new h),this._instance}}b.DiagAPI=h},653:(a,b,c)=>{Object.defineProperty(b,"__esModule",{value:!0}),b.MetricsAPI=void 0;let d=c(660),e=c(172),f=c(930),g="metrics";class h{constructor(){}static getInstance(){return this._instance||(this._instance=new h),this._instance}setGlobalMeterProvider(a){return(0,e.registerGlobal)(g,a,f.DiagAPI.instance())}getMeterProvider(){return(0,e.getGlobal)(g)||d.NOOP_METER_PROVIDER}getMeter(a,b,c){return this.getMeterProvider().getMeter(a,b,c)}disable(){(0,e.unregisterGlobal)(g,f.DiagAPI.instance())}}b.MetricsAPI=h},181:(a,b,c)=>{Object.defineProperty(b,"__esModule",{value:!0}),b.PropagationAPI=void 0;let d=c(172),e=c(874),f=c(194),g=c(277),h=c(369),i=c(930),j="propagation",k=new e.NoopTextMapPropagator;class l{constructor(){this.createBaggage=h.createBaggage,this.getBaggage=g.getBaggage,this.getActiveBaggage=g.getActiveBaggage,this.setBaggage=g.setBaggage,this.deleteBaggage=g.deleteBaggage}static getInstance(){return this._instance||(this._instance=new l),this._instance}setGlobalPropagator(a){return(0,d.registerGlobal)(j,a,i.DiagAPI.instance())}inject(a,b,c=f.defaultTextMapSetter){return this._getGlobalPropagator().inject(a,b,c)}extract(a,b,c=f.defaultTextMapGetter){return this._getGlobalPropagator().extract(a,b,c)}fields(){return this._getGlobalPropagator().fields()}disable(){(0,d.unregisterGlobal)(j,i.DiagAPI.instance())}_getGlobalPropagator(){return(0,d.getGlobal)(j)||k}}b.PropagationAPI=l},997:(a,b,c)=>{Object.defineProperty(b,"__esModule",{value:!0}),b.TraceAPI=void 0;let d=c(172),e=c(846),f=c(139),g=c(607),h=c(930),i="trace";class j{constructor(){this._proxyTracerProvider=new e.ProxyTracerProvider,this.wrapSpanContext=f.wrapSpanContext,this.isSpanContextValid=f.isSpanContextValid,this.deleteSpan=g.deleteSpan,this.getSpan=g.getSpan,this.getActiveSpan=g.getActiveSpan,this.getSpanContext=g.getSpanContext,this.setSpan=g.setSpan,this.setSpanContext=g.setSpanContext}static getInstance(){return this._instance||(this._instance=new j),this._instance}setGlobalTracerProvider(a){let b=(0,d.registerGlobal)(i,this._proxyTracerProvider,h.DiagAPI.instance());return b&&this._proxyTracerProvider.setDelegate(a),b}getTracerProvider(){return(0,d.getGlobal)(i)||this._proxyTracerProvider}getTracer(a,b){return this.getTracerProvider().getTracer(a,b)}disable(){(0,d.unregisterGlobal)(i,h.DiagAPI.instance()),this._proxyTracerProvider=new e.ProxyTracerProvider}}b.TraceAPI=j},277:(a,b,c)=>{Object.defineProperty(b,"__esModule",{value:!0}),b.deleteBaggage=b.setBaggage=b.getActiveBaggage=b.getBaggage=void 0;let d=c(491),e=(0,c(780).createContextKey)("OpenTelemetry Baggage Key");function f(a){return a.getValue(e)||void 0}b.getBaggage=f,b.getActiveBaggage=function(){return f(d.ContextAPI.getInstance().active())},b.setBaggage=function(a,b){return a.setValue(e,b)},b.deleteBaggage=function(a){return a.deleteValue(e)}},993:(a,b)=>{Object.defineProperty(b,"__esModule",{value:!0}),b.BaggageImpl=void 0;class c{constructor(a){this._entries=a?new Map(a):new Map}getEntry(a){let b=this._entries.get(a);if(b)return Object.assign({},b)}getAllEntries(){return Array.from(this._entries.entries()).map(([a,b])=>[a,b])}setEntry(a,b){let d=new c(this._entries);return d._entries.set(a,b),d}removeEntry(a){let b=new c(this._entries);return b._entries.delete(a),b}removeEntries(...a){let b=new c(this._entries);for(let c of a)b._entries.delete(c);return b}clear(){return new c}}b.BaggageImpl=c},830:(a,b)=>{Object.defineProperty(b,"__esModule",{value:!0}),b.baggageEntryMetadataSymbol=void 0,b.baggageEntryMetadataSymbol=Symbol("BaggageEntryMetadata")},369:(a,b,c)=>{Object.defineProperty(b,"__esModule",{value:!0}),b.baggageEntryMetadataFromString=b.createBaggage=void 0;let d=c(930),e=c(993),f=c(830),g=d.DiagAPI.instance();b.createBaggage=function(a={}){return new e.BaggageImpl(new Map(Object.entries(a)))},b.baggageEntryMetadataFromString=function(a){return"string"!=typeof a&&(g.error(`Cannot create baggage metadata from unknown type: ${typeof a}`),a=""),{__TYPE__:f.baggageEntryMetadataSymbol,toString:()=>a}}},67:(a,b,c)=>{Object.defineProperty(b,"__esModule",{value:!0}),b.context=void 0,b.context=c(491).ContextAPI.getInstance()},223:(a,b,c)=>{Object.defineProperty(b,"__esModule",{value:!0}),b.NoopContextManager=void 0;let d=c(780);class e{active(){return d.ROOT_CONTEXT}with(a,b,c,...d){return b.call(c,...d)}bind(a,b){return b}enable(){return this}disable(){return this}}b.NoopContextManager=e},780:(a,b)=>{Object.defineProperty(b,"__esModule",{value:!0}),b.ROOT_CONTEXT=b.createContextKey=void 0,b.createContextKey=function(a){return Symbol.for(a)};class c{constructor(a){let b=this;b._currentContext=a?new Map(a):new Map,b.getValue=a=>b._currentContext.get(a),b.setValue=(a,d)=>{let e=new c(b._currentContext);return e._currentContext.set(a,d),e},b.deleteValue=a=>{let d=new c(b._currentContext);return d._currentContext.delete(a),d}}}b.ROOT_CONTEXT=new c},506:(a,b,c)=>{Object.defineProperty(b,"__esModule",{value:!0}),b.diag=void 0,b.diag=c(930).DiagAPI.instance()},56:(a,b,c)=>{Object.defineProperty(b,"__esModule",{value:!0}),b.DiagComponentLogger=void 0;let d=c(172);class e{constructor(a){this._namespace=a.namespace||"DiagComponentLogger"}debug(...a){return f("debug",this._namespace,a)}error(...a){return f("error",this._namespace,a)}info(...a){return f("info",this._namespace,a)}warn(...a){return f("warn",this._namespace,a)}verbose(...a){return f("verbose",this._namespace,a)}}function f(a,b,c){let e=(0,d.getGlobal)("diag");if(e)return c.unshift(b),e[a](...c)}b.DiagComponentLogger=e},972:(a,b)=>{Object.defineProperty(b,"__esModule",{value:!0}),b.DiagConsoleLogger=void 0;let c=[{n:"error",c:"error"},{n:"warn",c:"warn"},{n:"info",c:"info"},{n:"debug",c:"debug"},{n:"verbose",c:"trace"}];class d{constructor(){for(let a=0;a<c.length;a++)this[c[a].n]=function(a){return function(...b){if(console){let c=console[a];if("function"!=typeof c&&(c=console.log),"function"==typeof c)return c.apply(console,b)}}}(c[a].c)}}b.DiagConsoleLogger=d},912:(a,b,c)=>{Object.defineProperty(b,"__esModule",{value:!0}),b.createLogLevelDiagLogger=void 0;let d=c(957);b.createLogLevelDiagLogger=function(a,b){function c(c,d){let e=b[c];return"function"==typeof e&&a>=d?e.bind(b):function(){}}return a<d.DiagLogLevel.NONE?a=d.DiagLogLevel.NONE:a>d.DiagLogLevel.ALL&&(a=d.DiagLogLevel.ALL),b=b||{},{error:c("error",d.DiagLogLevel.ERROR),warn:c("warn",d.DiagLogLevel.WARN),info:c("info",d.DiagLogLevel.INFO),debug:c("debug",d.DiagLogLevel.DEBUG),verbose:c("verbose",d.DiagLogLevel.VERBOSE)}}},957:(a,b)=>{Object.defineProperty(b,"__esModule",{value:!0}),b.DiagLogLevel=void 0,function(a){a[a.NONE=0]="NONE",a[a.ERROR=30]="ERROR",a[a.WARN=50]="WARN",a[a.INFO=60]="INFO",a[a.DEBUG=70]="DEBUG",a[a.VERBOSE=80]="VERBOSE",a[a.ALL=9999]="ALL"}(b.DiagLogLevel||(b.DiagLogLevel={}))},172:(a,b,c)=>{Object.defineProperty(b,"__esModule",{value:!0}),b.unregisterGlobal=b.getGlobal=b.registerGlobal=void 0;let d=c(200),e=c(521),f=c(130),g=e.VERSION.split(".")[0],h=Symbol.for(`opentelemetry.js.api.${g}`),i=d._globalThis;b.registerGlobal=function(a,b,c,d=!1){var f;let g=i[h]=null!=(f=i[h])?f:{version:e.VERSION};if(!d&&g[a]){let b=Error(`@opentelemetry/api: Attempted duplicate registration of API: ${a}`);return c.error(b.stack||b.message),!1}if(g.version!==e.VERSION){let b=Error(`@opentelemetry/api: Registration of version v${g.version} for ${a} does not match previously registered API v${e.VERSION}`);return c.error(b.stack||b.message),!1}return g[a]=b,c.debug(`@opentelemetry/api: Registered a global for ${a} v${e.VERSION}.`),!0},b.getGlobal=function(a){var b,c;let d=null==(b=i[h])?void 0:b.version;if(d&&(0,f.isCompatible)(d))return null==(c=i[h])?void 0:c[a]},b.unregisterGlobal=function(a,b){b.debug(`@opentelemetry/api: Unregistering a global for ${a} v${e.VERSION}.`);let c=i[h];c&&delete c[a]}},130:(a,b,c)=>{Object.defineProperty(b,"__esModule",{value:!0}),b.isCompatible=b._makeCompatibilityCheck=void 0;let d=c(521),e=/^(\d+)\.(\d+)\.(\d+)(-(.+))?$/;function f(a){let b=new Set([a]),c=new Set,d=a.match(e);if(!d)return()=>!1;let f={major:+d[1],minor:+d[2],patch:+d[3],prerelease:d[4]};if(null!=f.prerelease)return function(b){return b===a};function g(a){return c.add(a),!1}return function(a){if(b.has(a))return!0;if(c.has(a))return!1;let d=a.match(e);if(!d)return g(a);let h={major:+d[1],minor:+d[2],patch:+d[3],prerelease:d[4]};if(null!=h.prerelease||f.major!==h.major)return g(a);if(0===f.major)return f.minor===h.minor&&f.patch<=h.patch?(b.add(a),!0):g(a);return f.minor<=h.minor?(b.add(a),!0):g(a)}}b._makeCompatibilityCheck=f,b.isCompatible=f(d.VERSION)},886:(a,b,c)=>{Object.defineProperty(b,"__esModule",{value:!0}),b.metrics=void 0,b.metrics=c(653).MetricsAPI.getInstance()},901:(a,b)=>{Object.defineProperty(b,"__esModule",{value:!0}),b.ValueType=void 0,function(a){a[a.INT=0]="INT",a[a.DOUBLE=1]="DOUBLE"}(b.ValueType||(b.ValueType={}))},102:(a,b)=>{Object.defineProperty(b,"__esModule",{value:!0}),b.createNoopMeter=b.NOOP_OBSERVABLE_UP_DOWN_COUNTER_METRIC=b.NOOP_OBSERVABLE_GAUGE_METRIC=b.NOOP_OBSERVABLE_COUNTER_METRIC=b.NOOP_UP_DOWN_COUNTER_METRIC=b.NOOP_HISTOGRAM_METRIC=b.NOOP_COUNTER_METRIC=b.NOOP_METER=b.NoopObservableUpDownCounterMetric=b.NoopObservableGaugeMetric=b.NoopObservableCounterMetric=b.NoopObservableMetric=b.NoopHistogramMetric=b.NoopUpDownCounterMetric=b.NoopCounterMetric=b.NoopMetric=b.NoopMeter=void 0;class c{constructor(){}createHistogram(a,c){return b.NOOP_HISTOGRAM_METRIC}createCounter(a,c){return b.NOOP_COUNTER_METRIC}createUpDownCounter(a,c){return b.NOOP_UP_DOWN_COUNTER_METRIC}createObservableGauge(a,c){return b.NOOP_OBSERVABLE_GAUGE_METRIC}createObservableCounter(a,c){return b.NOOP_OBSERVABLE_COUNTER_METRIC}createObservableUpDownCounter(a,c){return b.NOOP_OBSERVABLE_UP_DOWN_COUNTER_METRIC}addBatchObservableCallback(a,b){}removeBatchObservableCallback(a){}}b.NoopMeter=c;class d{}b.NoopMetric=d;class e extends d{add(a,b){}}b.NoopCounterMetric=e;class f extends d{add(a,b){}}b.NoopUpDownCounterMetric=f;class g extends d{record(a,b){}}b.NoopHistogramMetric=g;class h{addCallback(a){}removeCallback(a){}}b.NoopObservableMetric=h;class i extends h{}b.NoopObservableCounterMetric=i;class j extends h{}b.NoopObservableGaugeMetric=j;class k extends h{}b.NoopObservableUpDownCounterMetric=k,b.NOOP_METER=new c,b.NOOP_COUNTER_METRIC=new e,b.NOOP_HISTOGRAM_METRIC=new g,b.NOOP_UP_DOWN_COUNTER_METRIC=new f,b.NOOP_OBSERVABLE_COUNTER_METRIC=new i,b.NOOP_OBSERVABLE_GAUGE_METRIC=new j,b.NOOP_OBSERVABLE_UP_DOWN_COUNTER_METRIC=new k,b.createNoopMeter=function(){return b.NOOP_METER}},660:(a,b,c)=>{Object.defineProperty(b,"__esModule",{value:!0}),b.NOOP_METER_PROVIDER=b.NoopMeterProvider=void 0;let d=c(102);class e{getMeter(a,b,c){return d.NOOP_METER}}b.NoopMeterProvider=e,b.NOOP_METER_PROVIDER=new e},200:function(a,b,c){var d=this&&this.__createBinding||(Object.create?function(a,b,c,d){void 0===d&&(d=c),Object.defineProperty(a,d,{enumerable:!0,get:function(){return b[c]}})}:function(a,b,c,d){void 0===d&&(d=c),a[d]=b[c]}),e=this&&this.__exportStar||function(a,b){for(var c in a)"default"===c||Object.prototype.hasOwnProperty.call(b,c)||d(b,a,c)};Object.defineProperty(b,"__esModule",{value:!0}),e(c(46),b)},651:(a,b)=>{Object.defineProperty(b,"__esModule",{value:!0}),b._globalThis=void 0,b._globalThis="object"==typeof globalThis?globalThis:global},46:function(a,b,c){var d=this&&this.__createBinding||(Object.create?function(a,b,c,d){void 0===d&&(d=c),Object.defineProperty(a,d,{enumerable:!0,get:function(){return b[c]}})}:function(a,b,c,d){void 0===d&&(d=c),a[d]=b[c]}),e=this&&this.__exportStar||function(a,b){for(var c in a)"default"===c||Object.prototype.hasOwnProperty.call(b,c)||d(b,a,c)};Object.defineProperty(b,"__esModule",{value:!0}),e(c(651),b)},939:(a,b,c)=>{Object.defineProperty(b,"__esModule",{value:!0}),b.propagation=void 0,b.propagation=c(181).PropagationAPI.getInstance()},874:(a,b)=>{Object.defineProperty(b,"__esModule",{value:!0}),b.NoopTextMapPropagator=void 0;class c{inject(a,b){}extract(a,b){return a}fields(){return[]}}b.NoopTextMapPropagator=c},194:(a,b)=>{Object.defineProperty(b,"__esModule",{value:!0}),b.defaultTextMapSetter=b.defaultTextMapGetter=void 0,b.defaultTextMapGetter={get(a,b){if(null!=a)return a[b]},keys:a=>null==a?[]:Object.keys(a)},b.defaultTextMapSetter={set(a,b,c){null!=a&&(a[b]=c)}}},845:(a,b,c)=>{Object.defineProperty(b,"__esModule",{value:!0}),b.trace=void 0,b.trace=c(997).TraceAPI.getInstance()},403:(a,b,c)=>{Object.defineProperty(b,"__esModule",{value:!0}),b.NonRecordingSpan=void 0;let d=c(476);class e{constructor(a=d.INVALID_SPAN_CONTEXT){this._spanContext=a}spanContext(){return this._spanContext}setAttribute(a,b){return this}setAttributes(a){return this}addEvent(a,b){return this}setStatus(a){return this}updateName(a){return this}end(a){}isRecording(){return!1}recordException(a,b){}}b.NonRecordingSpan=e},614:(a,b,c)=>{Object.defineProperty(b,"__esModule",{value:!0}),b.NoopTracer=void 0;let d=c(491),e=c(607),f=c(403),g=c(139),h=d.ContextAPI.getInstance();class i{startSpan(a,b,c=h.active()){var d;if(null==b?void 0:b.root)return new f.NonRecordingSpan;let i=c&&(0,e.getSpanContext)(c);return"object"==typeof(d=i)&&"string"==typeof d.spanId&&"string"==typeof d.traceId&&"number"==typeof d.traceFlags&&(0,g.isSpanContextValid)(i)?new f.NonRecordingSpan(i):new f.NonRecordingSpan}startActiveSpan(a,b,c,d){let f,g,i;if(arguments.length<2)return;2==arguments.length?i=b:3==arguments.length?(f=b,i=c):(f=b,g=c,i=d);let j=null!=g?g:h.active(),k=this.startSpan(a,f,j),l=(0,e.setSpan)(j,k);return h.with(l,i,void 0,k)}}b.NoopTracer=i},124:(a,b,c)=>{Object.defineProperty(b,"__esModule",{value:!0}),b.NoopTracerProvider=void 0;let d=c(614);class e{getTracer(a,b,c){return new d.NoopTracer}}b.NoopTracerProvider=e},125:(a,b,c)=>{Object.defineProperty(b,"__esModule",{value:!0}),b.ProxyTracer=void 0;let d=new(c(614)).NoopTracer;class e{constructor(a,b,c,d){this._provider=a,this.name=b,this.version=c,this.options=d}startSpan(a,b,c){return this._getTracer().startSpan(a,b,c)}startActiveSpan(a,b,c,d){let e=this._getTracer();return Reflect.apply(e.startActiveSpan,e,arguments)}_getTracer(){if(this._delegate)return this._delegate;let a=this._provider.getDelegateTracer(this.name,this.version,this.options);return a?(this._delegate=a,this._delegate):d}}b.ProxyTracer=e},846:(a,b,c)=>{Object.defineProperty(b,"__esModule",{value:!0}),b.ProxyTracerProvider=void 0;let d=c(125),e=new(c(124)).NoopTracerProvider;class f{getTracer(a,b,c){var e;return null!=(e=this.getDelegateTracer(a,b,c))?e:new d.ProxyTracer(this,a,b,c)}getDelegate(){var a;return null!=(a=this._delegate)?a:e}setDelegate(a){this._delegate=a}getDelegateTracer(a,b,c){var d;return null==(d=this._delegate)?void 0:d.getTracer(a,b,c)}}b.ProxyTracerProvider=f},996:(a,b)=>{Object.defineProperty(b,"__esModule",{value:!0}),b.SamplingDecision=void 0,function(a){a[a.NOT_RECORD=0]="NOT_RECORD",a[a.RECORD=1]="RECORD",a[a.RECORD_AND_SAMPLED=2]="RECORD_AND_SAMPLED"}(b.SamplingDecision||(b.SamplingDecision={}))},607:(a,b,c)=>{Object.defineProperty(b,"__esModule",{value:!0}),b.getSpanContext=b.setSpanContext=b.deleteSpan=b.setSpan=b.getActiveSpan=b.getSpan=void 0;let d=c(780),e=c(403),f=c(491),g=(0,d.createContextKey)("OpenTelemetry Context Key SPAN");function h(a){return a.getValue(g)||void 0}function i(a,b){return a.setValue(g,b)}b.getSpan=h,b.getActiveSpan=function(){return h(f.ContextAPI.getInstance().active())},b.setSpan=i,b.deleteSpan=function(a){return a.deleteValue(g)},b.setSpanContext=function(a,b){return i(a,new e.NonRecordingSpan(b))},b.getSpanContext=function(a){var b;return null==(b=h(a))?void 0:b.spanContext()}},325:(a,b,c)=>{Object.defineProperty(b,"__esModule",{value:!0}),b.TraceStateImpl=void 0;let d=c(564);class e{constructor(a){this._internalState=new Map,a&&this._parse(a)}set(a,b){let c=this._clone();return c._internalState.has(a)&&c._internalState.delete(a),c._internalState.set(a,b),c}unset(a){let b=this._clone();return b._internalState.delete(a),b}get(a){return this._internalState.get(a)}serialize(){return this._keys().reduce((a,b)=>(a.push(b+"="+this.get(b)),a),[]).join(",")}_parse(a){!(a.length>512)&&(this._internalState=a.split(",").reverse().reduce((a,b)=>{let c=b.trim(),e=c.indexOf("=");if(-1!==e){let f=c.slice(0,e),g=c.slice(e+1,b.length);(0,d.validateKey)(f)&&(0,d.validateValue)(g)&&a.set(f,g)}return a},new Map),this._internalState.size>32&&(this._internalState=new Map(Array.from(this._internalState.entries()).reverse().slice(0,32))))}_keys(){return Array.from(this._internalState.keys()).reverse()}_clone(){let a=new e;return a._internalState=new Map(this._internalState),a}}b.TraceStateImpl=e},564:(a,b)=>{Object.defineProperty(b,"__esModule",{value:!0}),b.validateValue=b.validateKey=void 0;let c="[_0-9a-z-*/]",d=`[a-z]${c}{0,255}`,e=`[a-z0-9]${c}{0,240}@[a-z]${c}{0,13}`,f=RegExp(`^(?:${d}|${e})$`),g=/^[ -~]{0,255}[!-~]$/,h=/,|=/;b.validateKey=function(a){return f.test(a)},b.validateValue=function(a){return g.test(a)&&!h.test(a)}},98:(a,b,c)=>{Object.defineProperty(b,"__esModule",{value:!0}),b.createTraceState=void 0;let d=c(325);b.createTraceState=function(a){return new d.TraceStateImpl(a)}},476:(a,b,c)=>{Object.defineProperty(b,"__esModule",{value:!0}),b.INVALID_SPAN_CONTEXT=b.INVALID_TRACEID=b.INVALID_SPANID=void 0;let d=c(475);b.INVALID_SPANID="0000000000000000",b.INVALID_TRACEID="00000000000000000000000000000000",b.INVALID_SPAN_CONTEXT={traceId:b.INVALID_TRACEID,spanId:b.INVALID_SPANID,traceFlags:d.TraceFlags.NONE}},357:(a,b)=>{Object.defineProperty(b,"__esModule",{value:!0}),b.SpanKind=void 0,function(a){a[a.INTERNAL=0]="INTERNAL",a[a.SERVER=1]="SERVER",a[a.CLIENT=2]="CLIENT",a[a.PRODUCER=3]="PRODUCER",a[a.CONSUMER=4]="CONSUMER"}(b.SpanKind||(b.SpanKind={}))},139:(a,b,c)=>{Object.defineProperty(b,"__esModule",{value:!0}),b.wrapSpanContext=b.isSpanContextValid=b.isValidSpanId=b.isValidTraceId=void 0;let d=c(476),e=c(403),f=/^([0-9a-f]{32})$/i,g=/^[0-9a-f]{16}$/i;function h(a){return f.test(a)&&a!==d.INVALID_TRACEID}function i(a){return g.test(a)&&a!==d.INVALID_SPANID}b.isValidTraceId=h,b.isValidSpanId=i,b.isSpanContextValid=function(a){return h(a.traceId)&&i(a.spanId)},b.wrapSpanContext=function(a){return new e.NonRecordingSpan(a)}},847:(a,b)=>{Object.defineProperty(b,"__esModule",{value:!0}),b.SpanStatusCode=void 0,function(a){a[a.UNSET=0]="UNSET",a[a.OK=1]="OK",a[a.ERROR=2]="ERROR"}(b.SpanStatusCode||(b.SpanStatusCode={}))},475:(a,b)=>{Object.defineProperty(b,"__esModule",{value:!0}),b.TraceFlags=void 0,function(a){a[a.NONE=0]="NONE",a[a.SAMPLED=1]="SAMPLED"}(b.TraceFlags||(b.TraceFlags={}))},521:(a,b)=>{Object.defineProperty(b,"__esModule",{value:!0}),b.VERSION=void 0,b.VERSION="1.6.0"}},c={};function d(a){var e=c[a];if(void 0!==e)return e.exports;var f=c[a]={exports:{}},g=!0;try{b[a].call(f.exports,f,f.exports,d),g=!1}finally{g&&delete c[a]}return f.exports}d.ab=__dirname+"/";var e={};(()=>{Object.defineProperty(e,"__esModule",{value:!0}),e.trace=e.propagation=e.metrics=e.diag=e.context=e.INVALID_SPAN_CONTEXT=e.INVALID_TRACEID=e.INVALID_SPANID=e.isValidSpanId=e.isValidTraceId=e.isSpanContextValid=e.createTraceState=e.TraceFlags=e.SpanStatusCode=e.SpanKind=e.SamplingDecision=e.ProxyTracerProvider=e.ProxyTracer=e.defaultTextMapSetter=e.defaultTextMapGetter=e.ValueType=e.createNoopMeter=e.DiagLogLevel=e.DiagConsoleLogger=e.ROOT_CONTEXT=e.createContextKey=e.baggageEntryMetadataFromString=void 0;var a=d(369);Object.defineProperty(e,"baggageEntryMetadataFromString",{enumerable:!0,get:function(){return a.baggageEntryMetadataFromString}});var b=d(780);Object.defineProperty(e,"createContextKey",{enumerable:!0,get:function(){return b.createContextKey}}),Object.defineProperty(e,"ROOT_CONTEXT",{enumerable:!0,get:function(){return b.ROOT_CONTEXT}});var c=d(972);Object.defineProperty(e,"DiagConsoleLogger",{enumerable:!0,get:function(){return c.DiagConsoleLogger}});var f=d(957);Object.defineProperty(e,"DiagLogLevel",{enumerable:!0,get:function(){return f.DiagLogLevel}});var g=d(102);Object.defineProperty(e,"createNoopMeter",{enumerable:!0,get:function(){return g.createNoopMeter}});var h=d(901);Object.defineProperty(e,"ValueType",{enumerable:!0,get:function(){return h.ValueType}});var i=d(194);Object.defineProperty(e,"defaultTextMapGetter",{enumerable:!0,get:function(){return i.defaultTextMapGetter}}),Object.defineProperty(e,"defaultTextMapSetter",{enumerable:!0,get:function(){return i.defaultTextMapSetter}});var j=d(125);Object.defineProperty(e,"ProxyTracer",{enumerable:!0,get:function(){return j.ProxyTracer}});var k=d(846);Object.defineProperty(e,"ProxyTracerProvider",{enumerable:!0,get:function(){return k.ProxyTracerProvider}});var l=d(996);Object.defineProperty(e,"SamplingDecision",{enumerable:!0,get:function(){return l.SamplingDecision}});var m=d(357);Object.defineProperty(e,"SpanKind",{enumerable:!0,get:function(){return m.SpanKind}});var n=d(847);Object.defineProperty(e,"SpanStatusCode",{enumerable:!0,get:function(){return n.SpanStatusCode}});var o=d(475);Object.defineProperty(e,"TraceFlags",{enumerable:!0,get:function(){return o.TraceFlags}});var p=d(98);Object.defineProperty(e,"createTraceState",{enumerable:!0,get:function(){return p.createTraceState}});var q=d(139);Object.defineProperty(e,"isSpanContextValid",{enumerable:!0,get:function(){return q.isSpanContextValid}}),Object.defineProperty(e,"isValidTraceId",{enumerable:!0,get:function(){return q.isValidTraceId}}),Object.defineProperty(e,"isValidSpanId",{enumerable:!0,get:function(){return q.isValidSpanId}});var r=d(476);Object.defineProperty(e,"INVALID_SPANID",{enumerable:!0,get:function(){return r.INVALID_SPANID}}),Object.defineProperty(e,"INVALID_TRACEID",{enumerable:!0,get:function(){return r.INVALID_TRACEID}}),Object.defineProperty(e,"INVALID_SPAN_CONTEXT",{enumerable:!0,get:function(){return r.INVALID_SPAN_CONTEXT}});let s=d(67);Object.defineProperty(e,"context",{enumerable:!0,get:function(){return s.context}});let t=d(506);Object.defineProperty(e,"diag",{enumerable:!0,get:function(){return t.diag}});let u=d(886);Object.defineProperty(e,"metrics",{enumerable:!0,get:function(){return u.metrics}});let v=d(939);Object.defineProperty(e,"propagation",{enumerable:!0,get:function(){return v.propagation}});let w=d(845);Object.defineProperty(e,"trace",{enumerable:!0,get:function(){return w.trace}}),e.default={context:s.context,diag:t.diag,metrics:u.metrics,propagation:v.propagation,trace:w.trace}})(),a.exports=e})()},3459:(a,b,c)=>{"use strict";Object.defineProperty(b,"__esModule",{value:!0}),!function(a,b){for(var c in b)Object.defineProperty(a,c,{enumerable:!0,get:b[c]})}(b,{HeadersAdapter:function(){return f},ReadonlyHeadersError:function(){return e}});let d=c(1518);class e extends Error{constructor(){super("Headers cannot be modified. Read more: https://nextjs.org/docs/app/api-reference/functions/headers")}static callable(){throw new e}}class f extends Headers{constructor(a){super(),this.headers=new Proxy(a,{get(b,c,e){if("symbol"==typeof c)return d.ReflectAdapter.get(b,c,e);let f=c.toLowerCase(),g=Object.keys(a).find(a=>a.toLowerCase()===f);if(void 0!==g)return d.ReflectAdapter.get(b,g,e)},set(b,c,e,f){if("symbol"==typeof c)return d.ReflectAdapter.set(b,c,e,f);let g=c.toLowerCase(),h=Object.keys(a).find(a=>a.toLowerCase()===g);return d.ReflectAdapter.set(b,h??c,e,f)},has(b,c){if("symbol"==typeof c)return d.ReflectAdapter.has(b,c);let e=c.toLowerCase(),f=Object.keys(a).find(a=>a.toLowerCase()===e);return void 0!==f&&d.ReflectAdapter.has(b,f)},deleteProperty(b,c){if("symbol"==typeof c)return d.ReflectAdapter.deleteProperty(b,c);let e=c.toLowerCase(),f=Object.keys(a).find(a=>a.toLowerCase()===e);return void 0===f||d.ReflectAdapter.deleteProperty(b,f)}})}static seal(a){return new Proxy(a,{get(a,b,c){switch(b){case"append":case"delete":case"set":return e.callable;default:return d.ReflectAdapter.get(a,b,c)}}})}merge(a){return Array.isArray(a)?a.join(", "):a}static from(a){return a instanceof Headers?a:new f(a)}append(a,b){let c=this.headers[a];"string"==typeof c?this.headers[a]=[c,b]:Array.isArray(c)?c.push(b):this.headers[a]=b}delete(a){delete this.headers[a]}get(a){let b=this.headers[a];return void 0!==b?this.merge(b):null}has(a){return void 0!==this.headers[a]}set(a,b){this.headers[a]=b}forEach(a,b){for(let[c,d]of this.entries())a.call(b,d,c,this)}*entries(){for(let a of Object.keys(this.headers)){let b=a.toLowerCase(),c=this.get(b);yield[b,c]}}*keys(){for(let a of Object.keys(this.headers)){let b=a.toLowerCase();yield b}}*values(){for(let a of Object.keys(this.headers)){let b=this.get(a);yield b}}[Symbol.iterator](){return this.entries()}}},3480:(a,b,c)=>{"use strict";a.exports=c(5600)},3745:(a,b,c)=>{"use strict";c.d(b,{O:()=>h});var d=c(3024),e=c(6760);let f=require("fast-glob");var g=c(8378);class h{constructor(a,b){this.rootPath=a,this.parsedData=b}async calculateStats(){await this.calculatePackageSizes();let a=this.buildPackageStats(),b=this.buildProjectStats(a);return{packageStats:a,projectStats:b}}async calculatePackageSizes(){let a=await (0,f.glob)("**/node_modules",{cwd:this.rootPath,ignore:["**/node_modules/**/node_modules/**"]});if(0===a.length){let a=e.join(this.rootPath,"node_modules");d.existsSync(a)&&await this.calculateNodeModulesSizes(a)}else for(let b of a){let a=e.join(this.rootPath,b);await this.calculateNodeModulesSizes(a)}await this.calculateRootPackagesSizes()}async calculateNodeModulesSizes(a){try{if(!d.existsSync(a))return;for(let b of d.readdirSync(a,{withFileTypes:!0}))if(b.isDirectory()&&!b.name.startsWith(".")){let c=e.join(a,b.name);if(b.name.startsWith("@"))await this.calculateScopedPackagesSizes(c,b.name);else{let a=await this.calculatePackageSize(c);this.updatePackageSize(b.name,a)}}}catch(a){}}async calculateScopedPackagesSizes(a,b){try{if(!d.existsSync(a))return;for(let c of d.readdirSync(a,{withFileTypes:!0}))if(c.isDirectory()){let d=e.join(a,c.name),f=`${b}/${c.name}`,g=await this.calculatePackageSize(d);this.updatePackageSize(f,g)}}catch(a){}}async calculatePackageSize(a){try{let b=e.join(a,"package.json");if(!d.existsSync(b))return await this.getFolderSize(a);let c=d.readFileSync(b,"utf8"),f=JSON.parse(c);return await this.calculateUniversalPackageSize(a,f)}catch(b){return await this.getFolderSize(a)}}async calculateUniversalPackageSize(a,b){let c=0,f=e.join(a,"package.json");if(d.existsSync(f)&&(c+=d.statSync(f).size),Array.isArray(b.files)&&b.files.length>0){for(let f of b.files)if("string"==typeof f){let b=e.join(a,f);if(d.existsSync(b)){let a=d.statSync(b);a.isDirectory()?c+=await this.getFolderSize(b):c+=a.size}}return c}for(let b of["dist","lib","build","es","cjs","esm","umd"]){let f=e.join(a,b);if(d.existsSync(f))return c+await this.getFolderSize(f)}for(let f of[b.main,b.module,b.browser].filter(Boolean))if("string"==typeof f){let b=e.join(a,f);if(d.existsSync(b)){let a=d.statSync(b);a.isFile()?c+=a.size:a.isDirectory()&&(c+=await this.getFolderSize(b))}}if(c>0)return c;let g=e.join(a,"src");if(d.existsSync(g))c+=await this.getFolderSize(g);else for(let b of["index.js","index.mjs","index.cjs","index.ts"]){let f=e.join(a,b);d.existsSync(f)&&(c+=d.statSync(f).size)}return c}async getFolderSize(a){try{let b=0;for(let c of d.readdirSync(a,{withFileTypes:!0})){let f=e.join(a,c.name);if(c.isDirectory()){let a=["node_modules",".git","__tests__","test","tests","spec","specs","docs","doc","documentation","examples","example","demo","demos","coverage",".nyc_output","bench","benchmark","benchmarks","fixtures","fixture","mocks","mock","__mocks__","__snapshots__",".github",".vscode",".idea","__pycache__",".cache","stories","story",".storybook","cypress","e2e","tmp","temp",".tmp",".temp","logs","log","locale","locales","lang","languages","i18n","intl","samples","sample","tutorials","tutorial","playground"],d=c.name.toLowerCase();a.some(a=>d===a||d.includes(a))||(b+=await this.getFolderSize(f))}else if(c.isFile()){let a=c.name.toLowerCase();if(!(a.startsWith(".")||a.endsWith(".config.js")||a.endsWith(".config.ts")||a.endsWith(".config.json")||a.includes(".test.")||a.includes(".spec.")||a.includes("-test.")||a.includes("-spec.")||a.includes(".dev.")||a.includes(".development.")||a.includes("-dev.")||a.includes("-development.")||a.endsWith(".md")||a.endsWith(".txt")||a.endsWith(".yml")||a.endsWith(".yaml")||a.endsWith(".map")||/^[a-z]{2}(-[a-z]{2})?\.js$/.test(a)||/^[a-z]{2}(_[a-z]{2})?\.js$/.test(a)||a.includes("locale")))try{let a=d.statSync(f);b+=a.size}catch(a){}}}return b}catch(a){return 0}}async calculateRootPackagesSizes(){for(let a of this.parsedData.packages){let b=e.dirname(a.path),c=await this.getSourceCodeSize(b);this.updatePackageSize(a.name,c)}}updatePackageSize(a,b){let c=this.parsedData.installedPackages.get(a);c?this.parsedData.installedPackages.set(a,{...c,size:b}):this.parsedData.installedPackages.set(a,{version:"1.0.0",size:b})}async getSourceCodeSize(a){try{let b=0;for(let c of d.readdirSync(a,{withFileTypes:!0})){let f=e.join(a,c.name);if(c.isDirectory())["app","source","src","lib","components","pages","utils","hooks","types","styles"].includes(c.name)&&(b+=await this.getFolderSize(f));else if(c.isFile()){let a=e.extname(c.name);if([".ts",".tsx",".js",".jsx",".json",".css",".scss",".less",".vue",".proto"].includes(a))try{let a=d.statSync(f);b+=a.size}catch(a){}}}return Math.max(b,1024)}catch(a){return 1024}}buildPackageStats(){let a=new Map,b=new Set;for(let c of(this.parsedData.packages.forEach(a=>b.add(a.name)),this.parsedData.installedPackages.forEach((a,c)=>b.add(c)),this.parsedData.dependencyTree.forEach((a,c)=>{b.add(c),a.forEach(a=>b.add(a))}),b)){let b=this.parsedData.installedPackages.get(c),d=void 0!==b,e=b?.size||0,f=b?.version||"1.0.0",h=Array.from(this.parsedData.dependencyTree.get(c)||[]),i=this.getAllDependencies(c),j=this.countDependents(c);a.set(c,{name:c,version:f,size:e,formattedSize:(0,g.X)(e),isInstalled:d,dependencyCount:h.length,dependentCount:j,directDependencies:h,allDependencies:i})}return a}getAllDependencies(a,b=new Set){if(b.has(a))return[];b.add(a);let c=this.parsedData.dependencyTree.get(a)||new Set,d=new Set(c);for(let a of c)this.getAllDependencies(a,new Set(b)).forEach(a=>d.add(a));return Array.from(d)}countDependents(a){let b=0;for(let[,c]of this.parsedData.dependencyTree.entries())c.has(a)&&b++;return b}buildProjectStats(a){let b=new Set(this.parsedData.packages.map(a=>a.name)),c=0,d=0,e=0,f=new Map,h=this.calculateDependencyLevels(),i=0;for(let[b,g]of a.entries()){c+=g.size,g.isInstalled?d++:e++;let a=h.get(b)||0;i=Math.max(i,a),f.set(a,(f.get(a)||0)+1)}let j=Array.from(a.values()).filter(a=>a.size>0).sort((a,b)=>b.size-a.size).slice(0,10),k=Array.from(a.values()).sort((a,b)=>b.dependencyCount-a.dependencyCount).slice(0,10);return{totalPackages:a.size,totalSize:c,formattedTotalSize:(0,g.X)(c),rootPackages:b.size,installedPackages:d,missingPackages:e,maxDependencyLevel:i,levelDistribution:f,largestPackages:j,heaviestDependencies:k}}calculateDependencyLevels(){let a=new Map,b=[];for(let c of this.parsedData.packages)a.set(c.name,0),b.push({packageName:c.name,level:0});for(;b.length>0;){let{packageName:c,level:d}=b.shift(),e=this.parsedData.dependencyTree.get(c);if(e)for(let c of e){let e=a.get(c),f=d+1;(void 0===e||f<e)&&(a.set(c,f),b.push({packageName:c,level:f}))}}return a}}},4e3:a=>{"use strict";a.exports=require("@npmcli/arborist")},5183:(a,b)=>{"use strict";function c(a){return null!==a&&"object"==typeof a&&"then"in a&&"function"==typeof a.then}Object.defineProperty(b,"__esModule",{value:!0}),Object.defineProperty(b,"isThenable",{enumerable:!0,get:function(){return c}})},5600:a=>{"use strict";a.exports=require("next/dist/compiled/next-server/pages-api.runtime.prod.js")},6435:(a,b)=>{"use strict";Object.defineProperty(b,"M",{enumerable:!0,get:function(){return function a(b,c){return c in b?b[c]:"then"in b&&"function"==typeof b.then?b.then(b=>a(b,c)):"function"==typeof b&&"default"===c?b:void 0}}})},6760:a=>{"use strict";a.exports=require("node:path")},8112:(a,b,c)=>{"use strict";let d;Object.defineProperty(b,"__esModule",{value:!0}),!function(a,b){for(var c in b)Object.defineProperty(a,c,{enumerable:!0,get:b[c]})}(b,{BubbledError:function(){return m},SpanKind:function(){return k},SpanStatusCode:function(){return j},getTracer:function(){return u},isBubbledError:function(){return n}});let e=c(8766),f=c(5183);try{d=c(3176)}catch(a){d=c(3176)}let{context:g,propagation:h,trace:i,SpanStatusCode:j,SpanKind:k,ROOT_CONTEXT:l}=d;class m extends Error{constructor(a,b){super(),this.bubble=a,this.result=b}}function n(a){return"object"==typeof a&&null!==a&&a instanceof m}let o=(a,b)=>{n(b)&&b.bubble?a.setAttribute("next.bubble",!0):(b&&a.recordException(b),a.setStatus({code:j.ERROR,message:null==b?void 0:b.message})),a.end()},p=new Map,q=d.createContextKey("next.rootSpanId"),r=0,s={set(a,b,c){a.push({key:b,value:c})}};class t{getTracerInstance(){return i.getTracer("next.js","0.0.1")}getContext(){return g}getTracePropagationData(){let a=g.active(),b=[];return h.inject(a,b,s),b}getActiveScopeSpan(){return i.getSpan(null==g?void 0:g.active())}withPropagatedContext(a,b,c){let d=g.active();if(i.getSpanContext(d))return b();let e=h.extract(d,a,c);return g.with(e,b)}trace(...a){var b;let[c,d,h]=a,{fn:j,options:k}="function"==typeof d?{fn:d,options:{}}:{fn:h,options:{...d}},m=k.spanName??c;if(!e.NextVanillaSpanAllowlist.includes(c)&&"1"!==process.env.NEXT_OTEL_VERBOSE||k.hideSpan)return j();let n=this.getSpanContext((null==k?void 0:k.parentSpan)??this.getActiveScopeSpan()),s=!1;n?(null==(b=i.getSpanContext(n))?void 0:b.isRemote)&&(s=!0):(n=(null==g?void 0:g.active())??l,s=!0);let t=r++;return k.attributes={"next.span_name":m,"next.span_type":c,...k.attributes},g.with(n.setValue(q,t),()=>this.getTracerInstance().startActiveSpan(m,k,a=>{let b="performance"in globalThis&&"measure"in performance?globalThis.performance.now():void 0,d=()=>{p.delete(t),b&&process.env.NEXT_OTEL_PERFORMANCE_PREFIX&&e.LogSpanAllowList.includes(c||"")&&performance.measure(`${process.env.NEXT_OTEL_PERFORMANCE_PREFIX}:next-${(c.split(".").pop()||"").replace(/[A-Z]/g,a=>"-"+a.toLowerCase())}`,{start:b,end:performance.now()})};s&&p.set(t,new Map(Object.entries(k.attributes??{})));try{if(j.length>1)return j(a,b=>o(a,b));let b=j(a);if((0,f.isThenable)(b))return b.then(b=>(a.end(),b)).catch(b=>{throw o(a,b),b}).finally(d);return a.end(),d(),b}catch(b){throw o(a,b),d(),b}}))}wrap(...a){let b=this,[c,d,f]=3===a.length?a:[a[0],{},a[1]];return e.NextVanillaSpanAllowlist.includes(c)||"1"===process.env.NEXT_OTEL_VERBOSE?function(){let a=d;"function"==typeof a&&"function"==typeof f&&(a=a.apply(this,arguments));let e=arguments.length-1,h=arguments[e];if("function"!=typeof h)return b.trace(c,a,()=>f.apply(this,arguments));{let d=b.getContext().bind(g.active(),h);return b.trace(c,a,(a,b)=>(arguments[e]=function(a){return null==b||b(a),d.apply(this,arguments)},f.apply(this,arguments)))}}:f}startSpan(...a){let[b,c]=a,d=this.getSpanContext((null==c?void 0:c.parentSpan)??this.getActiveScopeSpan());return this.getTracerInstance().startSpan(b,c,d)}getSpanContext(a){return a?i.setSpan(g.active(),a):void 0}getRootSpanAttributes(){let a=g.active().getValue(q);return p.get(a)}setRootSpanAttribute(a,b){let c=g.active().getValue(q),d=p.get(c);d&&d.set(a,b)}}let u=(()=>{let a=new t;return()=>a})()},8215:(a,b,c)=>{"use strict";c.a(a,async(a,d)=>{try{c.d(b,{Q:()=>i});var e=c(8378),f=c(2469),g=c(3745),h=a([f]);f=(h.then?(await h)():h)[0];class i{constructor(a){this.parsedData={packages:[],workspaces:[],installedPackages:new Map,dependencyTree:new Map},this.packageStats=null,this.rootPath=a}async buildGraph(){let a=new f.o(this.rootPath);this.parsedData=await a.parseProject();let b=new g.O(this.rootPath,this.parsedData),{packageStats:c}=await b.calculateStats();this.packageStats=c;let{nodes:d,links:e}=this.buildTreeStructure();this.calculateNodeMetrics(d,e);let h=this.calculateDuplication(d);return{nodes:d,links:e,packages:this.parsedData.packages,workspaces:this.parsedData.workspaces,stats:{totalNodes:d.length,totalLinks:e.length,maxLevel:d.length>0?Math.max(...d.map(a=>a.dependencyLevel)):0,levelDistribution:this.calculateLevelDistribution(d),duplicatedPackages:h}}}buildTreeStructure(){if(!this.parsedData||!this.packageStats)throw Error("Data not init");let a=[],b=[],c=new Map,d=0;for(let e of this.parsedData.packages){if(d>=1e5)break;let f={nodeCount:0,maxDepth:0},g=this.createNode(e.name||"unnamed",0,!0,[],c);a.push(g),f.nodeCount++,d++,this.buildDependencyTreeOptimized(e,g,a,b,c,new Set([e.name||"unnamed"]),f,Math.min(1e5-d,5e4),3),d+=f.nodeCount-1}return{nodes:a,links:b}}buildDependencyTreeOptimized(a,b,c,d,e,f,g,h,i){if(b.dependencyLevel>=i||g.nodeCount>=h)return;g.maxDepth=Math.max(g.maxDepth,b.dependencyLevel);let j=this.getDirectDependencies(a);for(let[k,l]of Array.from(j.entries()).slice(0,500)){if(f.has(k))continue;if(g.nodeCount>=h)break;let j=this.createNode(k,b.dependencyLevel+1,!1,[...b.parentPath,b.originalName],e);c.push(j),g.nodeCount++,d.push({source:b.id,target:j.id,type:l});let m=new Set(f);m.add(a.name||b.originalName);let n=this.findPackageJsonForDependency(k);n?this.buildDependencyTreeOptimized(n,j,c,d,e,m,g,h,i):this.buildFromLockFileOptimized(k,j,c,d,e,m,g,h,i)}}buildFromLockFileOptimized(a,b,c,d,e,f,g,h,i){if(b.dependencyLevel>=i||g.nodeCount>=h)return;let j=this.parsedData.dependencyTree.get(a);if(j&&0!==j.size)for(let k of Array.from(j).slice(0,100)){if(f.has(k)||g.nodeCount>=h)continue;let j=this.createNode(k,b.dependencyLevel+1,!1,[...b.parentPath,b.originalName],e);if(c.push(j),g.nodeCount++,d.push({source:b.id,target:j.id,type:"dependency"}),this.shouldContinueRecursion(k,b.dependencyLevel)){let b=new Set(f);b.add(a),this.buildFromLockFileOptimized(k,j,c,d,e,b,g,h,i)}}}getDirectDependencies(a){let b=new Map;for(let{source:c,type:d}of[{source:a.dependencies,type:"dependency"},{source:a.devDependencies,type:"devDependency"},{source:a.peerDependencies,type:"peerDependency"},{source:a.optionalDependencies,type:"optionalDependency"}])if(c&&"object"==typeof c)for(let a of Object.keys(c))!b.has(a)&&"string"==typeof a&&a.trim()&&b.set(a,d);return b}shouldContinueRecursion(a,b){return b<3}findPackageJsonForDependency(a){return this.parsedData.packages.find(b=>b.name===a)||null}createNode(a,b,c,d,f){let g=f.get(a)||0;f.set(a,g+1);let h=0===g?a:`${a}-duplicate-${g}`,i=this.packageStats?.get(a),j=this.parsedData.installedPackages.get(a),k=this.parsedData.packages.find(b=>b.name===a);return{id:h,name:a,originalName:a,version:i?.version||j?.version||"1.0.0",isRoot:c,isInstalled:!!j,depCount:0,inDegree:0,type:c?"root":"dependency",packagePath:k?.path,size:i?.size||j?.size||0,formattedSize:i?.formattedSize||(0,e.X)(j?.size||0),dependencyLevel:b,workspaceId:this.getWorkspaceForPackage(a),parentPath:d}}calculateNodeMetrics(a,b){let c=new Map,d=new Map,f=new Map;for(let b of a)c.set(b.id,b),d.set(b.id,0),f.set(b.id,0);for(let a of b){let{sourceId:b,targetId:c}=(0,e.K)(a);d.set(b,(d.get(b)||0)+1),f.set(c,(f.get(c)||0)+1)}for(let b of a)b.depCount=d.get(b.id)||0,b.inDegree=f.get(b.id)||0}calculateDuplication(a){let b=new Map;for(let c of a){let a=b.get(c.originalName)||0;b.set(c.originalName,a+1)}let c=new Map;for(let[a,d]of b.entries())d>1&&c.set(a,d);return c}calculateLevelDistribution(a){let b=new Map;for(let c of a){let a=c.dependencyLevel;b.set(a,(b.get(a)||0)+1)}return b}getWorkspaceForPackage(a){for(let b of this.parsedData.workspaces)if(b.packages.includes(a))return b.name;return"Unknown"}}d()}catch(a){d(a)}})},8378:(a,b,c)=>{"use strict";function d(a){return{sourceId:"string"==typeof a.source?a.source:a.source.id,targetId:"string"==typeof a.target?a.target:a.target.id}}function e(a){if(0===a)return"0 B";let b=Math.floor(Math.log(a)/Math.log(1024));return`${parseFloat((a/1024**b).toFixed(1))} ${["B","KB","MB","GB"][b]}`}c.d(b,{K:()=>d,X:()=>e})},8667:(a,b)=>{"use strict";Object.defineProperty(b,"A",{enumerable:!0,get:function(){return c}});var c=function(a){return a.PAGES="PAGES",a.PAGES_API="PAGES_API",a.APP_PAGE="APP_PAGE",a.APP_ROUTE="APP_ROUTE",a.IMAGE="IMAGE",a}({})},8766:(a,b)=>{"use strict";Object.defineProperty(b,"__esModule",{value:!0}),!function(a,b){for(var c in b)Object.defineProperty(a,c,{enumerable:!0,get:b[c]})}(b,{AppRenderSpan:function(){return i},AppRouteRouteHandlersSpan:function(){return l},BaseServerSpan:function(){return c},LoadComponentsSpan:function(){return d},LogSpanAllowList:function(){return p},MiddlewareSpan:function(){return n},NextNodeServerSpan:function(){return f},NextServerSpan:function(){return e},NextVanillaSpanAllowlist:function(){return o},NodeSpan:function(){return k},RenderSpan:function(){return h},ResolveMetadataSpan:function(){return m},RouterSpan:function(){return j},StartServerSpan:function(){return g}});var c=function(a){return a.handleRequest="BaseServer.handleRequest",a.run="BaseServer.run",a.pipe="BaseServer.pipe",a.getStaticHTML="BaseServer.getStaticHTML",a.render="BaseServer.render",a.renderToResponseWithComponents="BaseServer.renderToResponseWithComponents",a.renderToResponse="BaseServer.renderToResponse",a.renderToHTML="BaseServer.renderToHTML",a.renderError="BaseServer.renderError",a.renderErrorToResponse="BaseServer.renderErrorToResponse",a.renderErrorToHTML="BaseServer.renderErrorToHTML",a.render404="BaseServer.render404",a}(c||{}),d=function(a){return a.loadDefaultErrorComponents="LoadComponents.loadDefaultErrorComponents",a.loadComponents="LoadComponents.loadComponents",a}(d||{}),e=function(a){return a.getRequestHandler="NextServer.getRequestHandler",a.getServer="NextServer.getServer",a.getServerRequestHandler="NextServer.getServerRequestHandler",a.createServer="createServer.createServer",a}(e||{}),f=function(a){return a.compression="NextNodeServer.compression",a.getBuildId="NextNodeServer.getBuildId",a.createComponentTree="NextNodeServer.createComponentTree",a.clientComponentLoading="NextNodeServer.clientComponentLoading",a.getLayoutOrPageModule="NextNodeServer.getLayoutOrPageModule",a.generateStaticRoutes="NextNodeServer.generateStaticRoutes",a.generateFsStaticRoutes="NextNodeServer.generateFsStaticRoutes",a.generatePublicRoutes="NextNodeServer.generatePublicRoutes",a.generateImageRoutes="NextNodeServer.generateImageRoutes.route",a.sendRenderResult="NextNodeServer.sendRenderResult",a.proxyRequest="NextNodeServer.proxyRequest",a.runApi="NextNodeServer.runApi",a.render="NextNodeServer.render",a.renderHTML="NextNodeServer.renderHTML",a.imageOptimizer="NextNodeServer.imageOptimizer",a.getPagePath="NextNodeServer.getPagePath",a.getRoutesManifest="NextNodeServer.getRoutesManifest",a.findPageComponents="NextNodeServer.findPageComponents",a.getFontManifest="NextNodeServer.getFontManifest",a.getServerComponentManifest="NextNodeServer.getServerComponentManifest",a.getRequestHandler="NextNodeServer.getRequestHandler",a.renderToHTML="NextNodeServer.renderToHTML",a.renderError="NextNodeServer.renderError",a.renderErrorToHTML="NextNodeServer.renderErrorToHTML",a.render404="NextNodeServer.render404",a.startResponse="NextNodeServer.startResponse",a.route="route",a.onProxyReq="onProxyReq",a.apiResolver="apiResolver",a.internalFetch="internalFetch",a}(f||{}),g=function(a){return a.startServer="startServer.startServer",a}(g||{}),h=function(a){return a.getServerSideProps="Render.getServerSideProps",a.getStaticProps="Render.getStaticProps",a.renderToString="Render.renderToString",a.renderDocument="Render.renderDocument",a.createBodyResult="Render.createBodyResult",a}(h||{}),i=function(a){return a.renderToString="AppRender.renderToString",a.renderToReadableStream="AppRender.renderToReadableStream",a.getBodyResult="AppRender.getBodyResult",a.fetch="AppRender.fetch",a}(i||{}),j=function(a){return a.executeRoute="Router.executeRoute",a}(j||{}),k=function(a){return a.runHandler="Node.runHandler",a}(k||{}),l=function(a){return a.runHandler="AppRouteRouteHandlers.runHandler",a}(l||{}),m=function(a){return a.generateMetadata="ResolveMetadata.generateMetadata",a.generateViewport="ResolveMetadata.generateViewport",a}(m||{}),n=function(a){return a.execute="Middleware.execute",a}(n||{});let o=["Middleware.execute","BaseServer.handleRequest","Render.getServerSideProps","Render.getStaticProps","AppRender.fetch","AppRender.getBodyResult","Render.renderDocument","Node.runHandler","AppRouteRouteHandlers.runHandler","ResolveMetadata.generateMetadata","ResolveMetadata.generateViewport","NextNodeServer.createComponentTree","NextNodeServer.findPageComponents","NextNodeServer.getLayoutOrPageModule","NextNodeServer.startResponse","NextNodeServer.clientComponentLoading"],p=["NextNodeServer.findPageComponents","NextNodeServer.createComponentTree","NextNodeServer.clientComponentLoading"]},9046:(a,b,c)=>{"use strict";Object.defineProperty(b,"__esModule",{value:!0}),!function(a,b){for(var c in b)Object.defineProperty(a,c,{enumerable:!0,get:b[c]})}(b,{ApiError:function(){return r},COOKIE_NAME_PRERENDER_BYPASS:function(){return l},COOKIE_NAME_PRERENDER_DATA:function(){return m},RESPONSE_LIMIT_DEFAULT:function(){return n},SYMBOL_CLEARED_COOKIES:function(){return p},SYMBOL_PREVIEW_DATA:function(){return o},checkIsOnDemandRevalidate:function(){return k},clearPreviewData:function(){return q},redirect:function(){return j},sendError:function(){return s},sendStatusCode:function(){return i},setLazyProp:function(){return t},wrapApiHandler:function(){return h}});let d=c(3459),e=c(1922),f=c(8112),g=c(8766);function h(a,b){return(...c)=>((0,f.getTracer)().setRootSpanAttribute("next.route",a),(0,f.getTracer)().trace(g.NodeSpan.runHandler,{spanName:`executing api route (pages) ${a}`},()=>b(...c)))}function i(a,b){return a.statusCode=b,a}function j(a,b,c){if("string"==typeof b&&(c=b,b=307),"number"!=typeof b||"string"!=typeof c)throw Object.defineProperty(Error("Invalid redirect arguments. Please use a single argument URL, e.g. res.redirect('/destination') or use a status code and URL, e.g. res.redirect(307, '/destination')."),"__NEXT_ERROR_CODE",{value:"E389",enumerable:!1,configurable:!0});return a.writeHead(b,{Location:c}),a.write(c),a.end(),a}function k(a,b){let c=d.HeadersAdapter.from(a.headers);return{isOnDemandRevalidate:c.get(e.PRERENDER_REVALIDATE_HEADER)===b.previewModeId,revalidateOnlyGenerated:c.has(e.PRERENDER_REVALIDATE_ONLY_GENERATED_HEADER)}}let l="__prerender_bypass",m="__next_preview_data",n=4194304,o=Symbol(m),p=Symbol(l);function q(a,b={}){if(p in a)return a;let{serialize:d}=c(1254),e=a.getHeader("Set-Cookie");return a.setHeader("Set-Cookie",[..."string"==typeof e?[e]:Array.isArray(e)?e:[],d(l,"",{expires:new Date(0),httpOnly:!0,sameSite:"none",secure:!0,path:"/",...void 0!==b.path?{path:b.path}:void 0}),d(m,"",{expires:new Date(0),httpOnly:!0,sameSite:"none",secure:!0,path:"/",...void 0!==b.path?{path:b.path}:void 0})]),Object.defineProperty(a,p,{value:!0,enumerable:!1}),a}class r extends Error{constructor(a,b){super(b),this.statusCode=a}}function s(a,b,c){a.statusCode=b,a.statusMessage=c,a.end(c)}function t({req:a},b,c){let d={configurable:!0,enumerable:!0},e={...d,writable:!0};Object.defineProperty(a,b,{...d,get:()=>{let d=c();return Object.defineProperty(a,b,{...e,value:d}),d},set:c=>{Object.defineProperty(a,b,{...e,value:c})}})}},9332:a=>{"use strict";a.exports=import("glob")}};var b=require("../../webpack-api-runtime.js");b.C(a);var c=b(b.s=2464);module.exports=c})();
+(() => {
+  var a = {};
+  a.id = 985, a.ids = [985], a.modules = {
+    136: a => {
+      "use strict";
+      a.exports = require("@yarnpkg/lockfile")
+    }, 1254: a => {
+      (() => {
+        "use strict";
+        "undefined" != typeof __nccwpck_require__ && (__nccwpck_require__.ab = __dirname + "/");
+        var b = {};
+        (() => {
+          b.parse = function (b, c) {
+            if ("string" != typeof b) throw TypeError("argument str must be a string");
+            for (var e = {}, f = b.split(d), g = (c || {}).decode || a, h = 0; h < f.length; h++) {
+              var i = f[h], j = i.indexOf("=");
+              if (!(j < 0)) {
+                var k = i.substr(0, j).trim(), l = i.substr(++j, i.length).trim();
+                '"' == l[0] && (l = l.slice(1, -1)), void 0 == e[k] && (e[k] = function (a, b) {
+                  try {
+                    return b(a)
+                  } catch (b) {
+                    return a
+                  }
+                }(l, g))
+              }
+            }
+            return e
+          }, b.serialize = function (a, b, d) {
+            var f = d || {}, g = f.encode || c;
+            if ("function" != typeof g) throw TypeError("option encode is invalid");
+            if (!e.test(a)) throw TypeError("argument name is invalid");
+            var h = g(b);
+            if (h && !e.test(h)) throw TypeError("argument val is invalid");
+            var i = a + "=" + h;
+            if (null != f.maxAge) {
+              var j = f.maxAge - 0;
+              if (isNaN(j) || !isFinite(j)) throw TypeError("option maxAge is invalid");
+              i += "; Max-Age=" + Math.floor(j)
+            }
+            if (f.domain) {
+              if (!e.test(f.domain)) throw TypeError("option domain is invalid");
+              i += "; Domain=" + f.domain
+            }
+            if (f.path) {
+              if (!e.test(f.path)) throw TypeError("option path is invalid");
+              i += "; Path=" + f.path
+            }
+            if (f.expires) {
+              if ("function" != typeof f.expires.toUTCString) throw TypeError("option expires is invalid");
+              i += "; Expires=" + f.expires.toUTCString()
+            }
+            if (f.httpOnly && (i += "; HttpOnly"), f.secure && (i += "; Secure"), f.sameSite) switch ("string" == typeof f.sameSite ? f.sameSite.toLowerCase() : f.sameSite) {
+              case!0:
+              case"strict":
+                i += "; SameSite=Strict";
+                break;
+              case"lax":
+                i += "; SameSite=Lax";
+                break;
+              case"none":
+                i += "; SameSite=None";
+                break;
+              default:
+                throw TypeError("option sameSite is invalid")
+            }
+            return i
+          };
+          var a = decodeURIComponent, c = encodeURIComponent, d = /; */, e = /^[\u0009\u0020-\u007e\u0080-\u00ff]+$/
+        })(), a.exports = b
+      })()
+    }, 1518: (a, b) => {
+      "use strict";
+      Object.defineProperty(b, "__esModule", {value: !0}), Object.defineProperty(b, "ReflectAdapter", {
+        enumerable: !0,
+        get: function () {
+          return c
+        }
+      });
+
+      class c {
+        static get(a, b, c) {
+          let d = Reflect.get(a, b, c);
+          return "function" == typeof d ? d.bind(a) : d
+        }
+
+        static set(a, b, c, d) {
+          return Reflect.set(a, b, c, d)
+        }
+
+        static has(a, b) {
+          return Reflect.has(a, b)
+        }
+
+        static deleteProperty(a, b) {
+          return Reflect.deleteProperty(a, b)
+        }
+      }
+    }, 1922: (a, b) => {
+      "use strict";
+      Object.defineProperty(b, "__esModule", {value: !0}), !function (a, b) {
+        for (var c in b) Object.defineProperty(a, c, {enumerable: !0, get: b[c]})
+      }(b, {
+        ACTION_SUFFIX: function () {
+          return l
+        }, APP_DIR_ALIAS: function () {
+          return F
+        }, CACHE_ONE_YEAR: function () {
+          return x
+        }, DOT_NEXT_ALIAS: function () {
+          return D
+        }, ESLINT_DEFAULT_DIRS: function () {
+          return Z
+        }, GSP_NO_RETURNED_VALUE: function () {
+          return T
+        }, GSSP_COMPONENT_MEMBER_ERROR: function () {
+          return W
+        }, GSSP_NO_RETURNED_VALUE: function () {
+          return U
+        }, INFINITE_CACHE: function () {
+          return y
+        }, INSTRUMENTATION_HOOK_FILENAME: function () {
+          return B
+        }, MATCHED_PATH_HEADER: function () {
+          return e
+        }, MIDDLEWARE_FILENAME: function () {
+          return z
+        }, MIDDLEWARE_LOCATION_REGEXP: function () {
+          return A
+        }, NEXT_BODY_SUFFIX: function () {
+          return o
+        }, NEXT_CACHE_IMPLICIT_TAG_ID: function () {
+          return w
+        }, NEXT_CACHE_REVALIDATED_TAGS_HEADER: function () {
+          return q
+        }, NEXT_CACHE_REVALIDATE_TAG_TOKEN_HEADER: function () {
+          return r
+        }, NEXT_CACHE_SOFT_TAG_MAX_LENGTH: function () {
+          return v
+        }, NEXT_CACHE_TAGS_HEADER: function () {
+          return p
+        }, NEXT_CACHE_TAG_MAX_ITEMS: function () {
+          return t
+        }, NEXT_CACHE_TAG_MAX_LENGTH: function () {
+          return u
+        }, NEXT_DATA_SUFFIX: function () {
+          return m
+        }, NEXT_INTERCEPTION_MARKER_PREFIX: function () {
+          return d
+        }, NEXT_META_SUFFIX: function () {
+          return n
+        }, NEXT_QUERY_PARAM_PREFIX: function () {
+          return c
+        }, NEXT_RESUME_HEADER: function () {
+          return s
+        }, NON_STANDARD_NODE_ENV: function () {
+          return X
+        }, PAGES_DIR_ALIAS: function () {
+          return C
+        }, PRERENDER_REVALIDATE_HEADER: function () {
+          return f
+        }, PRERENDER_REVALIDATE_ONLY_GENERATED_HEADER: function () {
+          return g
+        }, PUBLIC_DIR_MIDDLEWARE_CONFLICT: function () {
+          return N
+        }, ROOT_DIR_ALIAS: function () {
+          return E
+        }, RSC_ACTION_CLIENT_WRAPPER_ALIAS: function () {
+          return M
+        }, RSC_ACTION_ENCRYPTION_ALIAS: function () {
+          return L
+        }, RSC_ACTION_PROXY_ALIAS: function () {
+          return I
+        }, RSC_ACTION_VALIDATE_ALIAS: function () {
+          return H
+        }, RSC_CACHE_WRAPPER_ALIAS: function () {
+          return J
+        }, RSC_DYNAMIC_IMPORT_WRAPPER_ALIAS: function () {
+          return K
+        }, RSC_MOD_REF_PROXY_ALIAS: function () {
+          return G
+        }, RSC_PREFETCH_SUFFIX: function () {
+          return h
+        }, RSC_SEGMENTS_DIR_SUFFIX: function () {
+          return i
+        }, RSC_SEGMENT_SUFFIX: function () {
+          return j
+        }, RSC_SUFFIX: function () {
+          return k
+        }, SERVER_PROPS_EXPORT_ERROR: function () {
+          return S
+        }, SERVER_PROPS_GET_INIT_PROPS_CONFLICT: function () {
+          return P
+        }, SERVER_PROPS_SSG_CONFLICT: function () {
+          return Q
+        }, SERVER_RUNTIME: function () {
+          return $
+        }, SSG_FALLBACK_EXPORT_ERROR: function () {
+          return Y
+        }, SSG_GET_INITIAL_PROPS_CONFLICT: function () {
+          return O
+        }, STATIC_STATUS_PAGE_GET_INITIAL_PROPS_ERROR: function () {
+          return R
+        }, UNSTABLE_REVALIDATE_RENAME_ERROR: function () {
+          return V
+        }, WEBPACK_LAYERS: function () {
+          return aa
+        }, WEBPACK_RESOURCE_QUERIES: function () {
+          return ab
+        }
+      });
+      let c = "nxtP", d = "nxtI", e = "x-matched-path", f = "x-prerender-revalidate",
+        g = "x-prerender-revalidate-if-generated", h = ".prefetch.rsc", i = ".segments", j = ".segment.rsc", k = ".rsc",
+        l = ".action", m = ".json", n = ".meta", o = ".body", p = "x-next-cache-tags", q = "x-next-revalidated-tags",
+        r = "x-next-revalidate-tag-token", s = "next-resume", t = 128, u = 256, v = 1024, w = "_N_T_", x = 31536e3,
+        y = 0xfffffffe, z = "middleware", A = `(?:src/)?${z}`, B = "instrumentation", C = "private-next-pages",
+        D = "private-dot-next", E = "private-next-root-dir", F = "private-next-app-dir",
+        G = "private-next-rsc-mod-ref-proxy", H = "private-next-rsc-action-validate",
+        I = "private-next-rsc-server-reference", J = "private-next-rsc-cache-wrapper",
+        K = "private-next-rsc-track-dynamic-import", L = "private-next-rsc-action-encryption",
+        M = "private-next-rsc-action-client-wrapper",
+        N = "You can not have a '_next' folder inside of your public folder. This conflicts with the internal '/_next' route. https://nextjs.org/docs/messages/public-next-folder-conflict",
+        O = "You can not use getInitialProps with getStaticProps. To use SSG, please remove your getInitialProps",
+        P = "You can not use getInitialProps with getServerSideProps. Please remove getInitialProps.",
+        Q = "You can not use getStaticProps or getStaticPaths with getServerSideProps. To use SSG, please remove getServerSideProps",
+        R = "can not have getInitialProps/getServerSideProps, https://nextjs.org/docs/messages/404-get-initial-props",
+        S = "pages with `getServerSideProps` can not be exported. See more info here: https://nextjs.org/docs/messages/gssp-export",
+        T = "Your `getStaticProps` function did not return an object. Did you forget to add a `return`?",
+        U = "Your `getServerSideProps` function did not return an object. Did you forget to add a `return`?",
+        V = "The `unstable_revalidate` property is available for general use.\nPlease use `revalidate` instead.",
+        W = "can not be attached to a page's component and must be exported from the page. See more info here: https://nextjs.org/docs/messages/gssp-component-member",
+        X = 'You are using a non-standard "NODE_ENV" value in your environment. This creates inconsistencies in the project and is strongly advised against. Read more: https://nextjs.org/docs/messages/non-standard-node-env',
+        Y = "Pages with `fallback` enabled in `getStaticPaths` can not be exported. See more info here: https://nextjs.org/docs/messages/ssg-fallback-true-export",
+        Z = ["app", "pages", "components", "lib", "src"],
+        $ = {edge: "edge", experimentalEdge: "experimental-edge", nodejs: "nodejs"}, _ = {
+          shared: "shared",
+          reactServerComponents: "rsc",
+          serverSideRendering: "ssr",
+          actionBrowser: "action-browser",
+          apiNode: "api-node",
+          apiEdge: "api-edge",
+          middleware: "middleware",
+          instrument: "instrument",
+          edgeAsset: "edge-asset",
+          appPagesBrowser: "app-pages-browser",
+          pagesDirBrowser: "pages-dir-browser",
+          pagesDirEdge: "pages-dir-edge",
+          pagesDirNode: "pages-dir-node"
+        }, aa = {
+          ..._,
+          GROUP: {
+            builtinReact: [_.reactServerComponents, _.actionBrowser],
+            serverOnly: [_.reactServerComponents, _.actionBrowser, _.instrument, _.middleware],
+            neutralTarget: [_.apiNode, _.apiEdge],
+            clientOnly: [_.serverSideRendering, _.appPagesBrowser],
+            bundled: [_.reactServerComponents, _.actionBrowser, _.serverSideRendering, _.appPagesBrowser, _.shared, _.instrument, _.middleware],
+            appPages: [_.reactServerComponents, _.serverSideRendering, _.appPagesBrowser, _.actionBrowser]
+          }
+        }, ab = {
+          edgeSSREntry: "__next_edge_ssr_entry__",
+          metadata: "__next_metadata__",
+          metadataRoute: "__next_metadata_route__",
+          metadataImageMeta: "__next_metadata_image_meta__"
+        }
+    }, 2464: (a, b, c) => {
+      "use strict";
+      c.a(a, async (a, d) => {
+        try {
+          c.r(b), c.d(b, {config: () => o, default: () => n, handler: () => m});
+          var e = c(9046), f = c(8667), g = c(3480), h = c(6435), i = c(2644), j = c(8112), k = c(8766), l = a([i]);
+          i = (l.then ? (await l)() : l)[0];
+          let n = (0, h.M)(i, "default"), o = (0, h.M)(i, "config"), p = new g.PagesAPIRouteModule({
+            definition: {
+              kind: f.A.PAGES_API,
+              page: "/api/analyze",
+              pathname: "/api/analyze",
+              bundlePath: "",
+              filename: ""
+            }, userland: i, distDir: ".next", projectDir: ""
+          });
+
+          async function m(a, b, c) {
+            let d = await p.prepare(a, b, {srcPage: "/api/analyze"});
+            if (!d) {
+              b.statusCode = 400, b.end("Bad Request"), null == c.waitUntil || c.waitUntil.call(c, Promise.resolve());
+              return
+            }
+            let {query: f, params: g, prerenderManifest: h} = d;
+            try {
+              let c = a.method || "GET", d = (0, j.getTracer)(), e = d.getActiveScopeSpan(),
+                i = p.instrumentationOnRequestError.bind(p), l = async e => p.render(a, b, {
+                  query: {...f, ...g},
+                  params: g,
+                  allowedRevalidateHeaderKeys: void 0,
+                  multiZoneDraftMode: !0,
+                  trustHostHeader: void 0,
+                  previewProps: h.preview,
+                  propagateError: !1,
+                  dev: p.isDev,
+                  page: "/api/analyze",
+                  projectDir: "",
+                  onError: (...b) => i(a, ...b)
+                }).finally(() => {
+                  if (!e) return;
+                  e.setAttributes({"http.status_code": b.statusCode, "next.rsc": !1});
+                  let f = d.getRootSpanAttributes();
+                  if (!f) return;
+                  if (f.get("next.span_type") !== k.BaseServerSpan.handleRequest) return void console.warn(`Unexpected root span type '${f.get("next.span_type")}'. Please report this Next.js issue https://github.com/vercel/next.js`);
+                  let g = f.get("next.route");
+                  if (g) {
+                    let a = `${c} ${g}`;
+                    e.setAttributes({"next.route": g, "http.route": g, "next.span_name": a}), e.updateName(a)
+                  } else e.updateName(`${c} ${a.url}`)
+                });
+              e ? await l(e) : await d.withPropagatedContext(a.headers, () => d.trace(k.BaseServerSpan.handleRequest, {
+                spanName: `${c} ${a.url}`,
+                kind: j.SpanKind.SERVER,
+                attributes: {"http.method": c, "http.target": a.url}
+              }, l))
+            } catch (a) {
+              if (p.isDev) throw a;
+              (0, e.sendError)(b, 500, "Internal Server Error")
+            } finally {
+              null == c.waitUntil || c.waitUntil.call(c, Promise.resolve())
+            }
+          }
+
+          d()
+        } catch (a) {
+          d(a)
+        }
+      })
+    }, 2469: (a, b, c) => {
+      "use strict";
+      c.a(a, async (a, d) => {
+        try {
+          c.d(b, {o: () => l});
+          var e = c(3024), f = c(6760), g = c(4e3), h = c.n(g), i = c(136), j = c(9332), k = a([j]);
+          j = (k.then ? (await k)() : k)[0];
+
+          class l {
+            constructor(a) {
+              this.rootPath = a
+            }
+
+            async parseProject() {
+              let a = await this.findPackages(), b = this.detectWorkspaces(a), c = new Map, d = new Map;
+              return await this.analyzeLockFiles(c, d), await this.scanNodeModules(c, d), {
+                packages: a,
+                workspaces: b,
+                installedPackages: c,
+                dependencyTree: d
+              }
+            }
+
+            async findPackages() {
+              let a = await (0, j.glob)("**/package.json", {
+                cwd: this.rootPath,
+                ignore: ["**/node_modules/**", "**/.next/**", "**/dist/**", "**/build/**", "**/coverage/**"]
+              }), b = [];
+              for (let c of a) {
+                let a = f.join(this.rootPath, c);
+                try {
+                  let c = e.readFileSync(a, "utf8"), d = JSON.parse(c);
+                  b.push({
+                    name: d.name || f.basename(f.dirname(a)),
+                    version: d.version || "1.0.0",
+                    path: a,
+                    dependencies: d.dependencies || {},
+                    devDependencies: d.devDependencies || {},
+                    peerDependencies: d.peerDependencies || {},
+                    optionalDependencies: d.optionalDependencies || {}
+                  })
+                } catch (a) {
+                }
+              }
+              return b
+            }
+
+            detectWorkspaces(a) {
+              let b = new Map;
+              for (let c of a) {
+                let a = f.dirname(c.path), d = f.relative(this.rootPath, a), e = "";
+                if ("" === d) e = "root"; else {
+                  let a = d.split(f.sep);
+                  e = 1 === a.length ? "root" : a[0]
+                }
+                b.has(e) || b.set(e, []), b.get(e)?.push(c)
+              }
+              return Array.from(b.entries()).map(([a, b]) => ({
+                name: "root" === a ? "Root" : a.charAt(0).toUpperCase() + a.slice(1),
+                path: "root" === a ? this.rootPath : f.join(this.rootPath, a),
+                packages: b.map(a => a.name)
+              }))
+            }
+
+            async analyzeLockFiles(a, b) {
+              for (let c of (await this.findLockFiles())) "yarn" === c.type ? await this.analyzeYarnLockWithLibrary(c.path, a, b) : "npm" === c.type && await this.analyzePackageLockWithArborist(c.path, a, b)
+            }
+
+            async findLockFiles() {
+              let a = [];
+              for (let b of (await (0, j.glob)("**/yarn.lock", {
+                cwd: this.rootPath,
+                ignore: ["**/node_modules/**"]
+              }))) a.push({path: f.join(this.rootPath, b), type: "yarn"});
+              for (let b of (await (0, j.glob)("**/package-lock.json", {
+                cwd: this.rootPath,
+                ignore: ["**/node_modules/**"]
+              }))) a.push({path: f.join(this.rootPath, b), type: "npm"});
+              return a
+            }
+
+            async analyzeYarnLockWithLibrary(a, b, c) {
+              try {
+                let d = e.readFileSync(a, "utf8"), f = i.parse(d);
+                if ("success" !== f.type) return;
+                for (let [a, d] of Object.entries(f.object)) {
+                  let e = this.extractPackageNameFromYarnKey(a);
+                  if (!e) continue;
+                  let f = d.version || "1.0.0";
+                  b.has(e) || b.set(e, {version: f});
+                  let g = d.dependencies || {};
+                  if (Object.keys(g).length > 0) {
+                    let a = new Set;
+                    for (let b of Object.keys(g)) {
+                      let c = this.cleanPackageName(b);
+                      c && c !== e && a.add(c)
+                    }
+                    a.size > 0 && c.set(e, a)
+                  }
+                  let h = d.optionalDependencies || {};
+                  if (Object.keys(h).length > 0) {
+                    let a = c.get(e) || new Set;
+                    for (let b of Object.keys(h)) {
+                      let c = this.cleanPackageName(b);
+                      c && c !== e && a.add(c)
+                    }
+                    c.set(e, a)
+                  }
+                }
+              } catch (a) {
+              }
+            }
+
+            async analyzePackageLockWithArborist(a, b, c) {
+              try {
+                let d = f.dirname(a), e = new (h())({path: d}), g = await e.loadActual();
+                for (let a of g.inventory.values()) {
+                  if (!a.name || a.name === g.name) continue;
+                  let d = a.name, e = a.version || "1.0.0";
+                  b.has(d) || b.set(d, {version: e});
+                  let f = new Set;
+                  for (let b of a.edgesOut.values()) b?.to?.name && b.to.name !== d && f.add(b.to.name);
+                  f.size > 0 && c.set(d, f)
+                }
+              } catch (a) {
+              }
+            }
+
+            extractPackageNameFromYarnKey(a) {
+              try {
+                let b = a.replace(/"/g, "");
+                if (b.startsWith("@")) {
+                  let a = b.match(/^(@[^/]+\/[^@]+)@/);
+                  return a ? a[1] : null
+                }
+                let c = b.indexOf("@");
+                if (c > 0) return b.substring(0, c);
+                return b.includes("@") ? null : b
+              } catch (a) {
+                return null
+              }
+            }
+
+            cleanPackageName(a) {
+              return a.replace(/[<>=^~].*$/, "").trim()
+            }
+
+            async scanNodeModules(a, b) {
+              for (let c of (await (0, j.glob)("**/node_modules", {
+                cwd: this.rootPath,
+                ignore: ["**/node_modules/**/node_modules/**"]
+              }))) {
+                let d = f.join(this.rootPath, c);
+                await this.scanSingleNodeModules(d, a, b)
+              }
+            }
+
+            async scanSingleNodeModules(a, b, c) {
+              try {
+                for (let d of e.readdirSync(a, {withFileTypes: !0})) d.isDirectory() && !d.name.startsWith(".") && (d.name.startsWith("@") ? await this.processScopedPackage(a, d.name, b, c) : await this.processRegularPackage(a, d.name, b, c))
+              } catch (a) {
+              }
+            }
+
+            async processScopedPackage(a, b, c, d) {
+              let g = f.join(a, b);
+              try {
+                for (let a of e.readdirSync(g, {withFileTypes: !0})) if (a.isDirectory()) {
+                  let e = `${b}/${a.name}`, h = f.join(g, a.name);
+                  await this.processPackageJson(e, h, c, d)
+                }
+              } catch (a) {
+              }
+            }
+
+            async processRegularPackage(a, b, c, d) {
+              let e = f.join(a, b);
+              await this.processPackageJson(b, e, c, d)
+            }
+
+            async processPackageJson(a, b, c, d) {
+              try {
+                let g = f.join(b, "package.json");
+                if (e.existsSync(g)) {
+                  let b = JSON.parse(e.readFileSync(g, "utf8")), f = b.version || "1.0.0";
+                  if (c.has(a) || c.set(a, {version: f}), !d.has(a)) {
+                    let c = {...b.dependencies, ...b.optionalDependencies};
+                    if (Object.keys(c).length > 0) {
+                      let b = new Set;
+                      Object.keys(c).forEach(a => {
+                        let c = this.cleanPackageName(a);
+                        c && b.add(c)
+                      }), b.size > 0 && d.set(a, b)
+                    }
+                  }
+                }
+              } catch (a) {
+              }
+            }
+          }
+
+          d()
+        } catch (a) {
+          d(a)
+        }
+      })
+    }, 2644: (a, b, c) => {
+      "use strict";
+      c.a(a, async (a, d) => {
+        try {
+          c.r(b), c.d(b, {config: () => i, default: () => h});
+          var e = c(3024), f = c(8215), g = a([f]);
+          f = (g.then ? (await g)() : g)[0];
+          let i = {api: {bodyParser: !0}};
+
+          async function h(a, b) {
+            if ("POST" !== a.method) return b.status(405).json({error: "Method not allowed"});
+            let c = a.query;
+            try {
+              let a = Array.isArray(c.folder) ? c.folder[0] : c.folder;
+              if (!a) return b.status(400).json({error: "Project path is required"});
+              if (!e.existsSync(a)) return b.status(400).json({error: "Project path does not exist"});
+              let d = new f.Q(a), g = await d.buildGraph();
+              b.status(200).json(g)
+            } catch (a) {
+              b.status(500).json({
+                error: "Failed to analyze project",
+                details: a instanceof Error ? a.message : String(a)
+              })
+            }
+          }
+
+          d()
+        } catch (a) {
+          d(a)
+        }
+      })
+    }, 3024: a => {
+      "use strict";
+      a.exports = require("node:fs")
+    }, 3176: a => {
+      (() => {
+        "use strict";
+        var b = {
+          491: (a, b, c) => {
+            Object.defineProperty(b, "__esModule", {value: !0}), b.ContextAPI = void 0;
+            let d = c(223), e = c(172), f = c(930), g = "context", h = new d.NoopContextManager;
+
+            class i {
+              constructor() {
+              }
+
+              static getInstance() {
+                return this._instance || (this._instance = new i), this._instance
+              }
+
+              setGlobalContextManager(a) {
+                return (0, e.registerGlobal)(g, a, f.DiagAPI.instance())
+              }
+
+              active() {
+                return this._getContextManager().active()
+              }
+
+              with(a, b, c, ...d) {
+                return this._getContextManager().with(a, b, c, ...d)
+              }
+
+              bind(a, b) {
+                return this._getContextManager().bind(a, b)
+              }
+
+              _getContextManager() {
+                return (0, e.getGlobal)(g) || h
+              }
+
+              disable() {
+                this._getContextManager().disable(), (0, e.unregisterGlobal)(g, f.DiagAPI.instance())
+              }
+            }
+
+            b.ContextAPI = i
+          }, 930: (a, b, c) => {
+            Object.defineProperty(b, "__esModule", {value: !0}), b.DiagAPI = void 0;
+            let d = c(56), e = c(912), f = c(957), g = c(172);
+
+            class h {
+              constructor() {
+                function a(a) {
+                  return function (...b) {
+                    let c = (0, g.getGlobal)("diag");
+                    if (c) return c[a](...b)
+                  }
+                }
+
+                let b = this;
+                b.setLogger = (a, c = {logLevel: f.DiagLogLevel.INFO}) => {
+                  var d, h, i;
+                  if (a === b) {
+                    let a = Error("Cannot use diag as the logger for itself. Please use a DiagLogger implementation like ConsoleDiagLogger or a custom implementation");
+                    return b.error(null != (d = a.stack) ? d : a.message), !1
+                  }
+                  "number" == typeof c && (c = {logLevel: c});
+                  let j = (0, g.getGlobal)("diag"),
+                    k = (0, e.createLogLevelDiagLogger)(null != (h = c.logLevel) ? h : f.DiagLogLevel.INFO, a);
+                  if (j && !c.suppressOverrideMessage) {
+                    let a = null != (i = Error().stack) ? i : "<failed to generate stacktrace>";
+                    j.warn(`Current logger will be overwritten from ${a}`), k.warn(`Current logger will overwrite one already registered from ${a}`)
+                  }
+                  return (0, g.registerGlobal)("diag", k, b, !0)
+                }, b.disable = () => {
+                  (0, g.unregisterGlobal)("diag", b)
+                }, b.createComponentLogger = a => new d.DiagComponentLogger(a), b.verbose = a("verbose"), b.debug = a("debug"), b.info = a("info"), b.warn = a("warn"), b.error = a("error")
+              }
+
+              static instance() {
+                return this._instance || (this._instance = new h), this._instance
+              }
+            }
+
+            b.DiagAPI = h
+          }, 653: (a, b, c) => {
+            Object.defineProperty(b, "__esModule", {value: !0}), b.MetricsAPI = void 0;
+            let d = c(660), e = c(172), f = c(930), g = "metrics";
+
+            class h {
+              constructor() {
+              }
+
+              static getInstance() {
+                return this._instance || (this._instance = new h), this._instance
+              }
+
+              setGlobalMeterProvider(a) {
+                return (0, e.registerGlobal)(g, a, f.DiagAPI.instance())
+              }
+
+              getMeterProvider() {
+                return (0, e.getGlobal)(g) || d.NOOP_METER_PROVIDER
+              }
+
+              getMeter(a, b, c) {
+                return this.getMeterProvider().getMeter(a, b, c)
+              }
+
+              disable() {
+                (0, e.unregisterGlobal)(g, f.DiagAPI.instance())
+              }
+            }
+
+            b.MetricsAPI = h
+          }, 181: (a, b, c) => {
+            Object.defineProperty(b, "__esModule", {value: !0}), b.PropagationAPI = void 0;
+            let d = c(172), e = c(874), f = c(194), g = c(277), h = c(369), i = c(930), j = "propagation",
+              k = new e.NoopTextMapPropagator;
+
+            class l {
+              constructor() {
+                this.createBaggage = h.createBaggage, this.getBaggage = g.getBaggage, this.getActiveBaggage = g.getActiveBaggage, this.setBaggage = g.setBaggage, this.deleteBaggage = g.deleteBaggage
+              }
+
+              static getInstance() {
+                return this._instance || (this._instance = new l), this._instance
+              }
+
+              setGlobalPropagator(a) {
+                return (0, d.registerGlobal)(j, a, i.DiagAPI.instance())
+              }
+
+              inject(a, b, c = f.defaultTextMapSetter) {
+                return this._getGlobalPropagator().inject(a, b, c)
+              }
+
+              extract(a, b, c = f.defaultTextMapGetter) {
+                return this._getGlobalPropagator().extract(a, b, c)
+              }
+
+              fields() {
+                return this._getGlobalPropagator().fields()
+              }
+
+              disable() {
+                (0, d.unregisterGlobal)(j, i.DiagAPI.instance())
+              }
+
+              _getGlobalPropagator() {
+                return (0, d.getGlobal)(j) || k
+              }
+            }
+
+            b.PropagationAPI = l
+          }, 997: (a, b, c) => {
+            Object.defineProperty(b, "__esModule", {value: !0}), b.TraceAPI = void 0;
+            let d = c(172), e = c(846), f = c(139), g = c(607), h = c(930), i = "trace";
+
+            class j {
+              constructor() {
+                this._proxyTracerProvider = new e.ProxyTracerProvider, this.wrapSpanContext = f.wrapSpanContext, this.isSpanContextValid = f.isSpanContextValid, this.deleteSpan = g.deleteSpan, this.getSpan = g.getSpan, this.getActiveSpan = g.getActiveSpan, this.getSpanContext = g.getSpanContext, this.setSpan = g.setSpan, this.setSpanContext = g.setSpanContext
+              }
+
+              static getInstance() {
+                return this._instance || (this._instance = new j), this._instance
+              }
+
+              setGlobalTracerProvider(a) {
+                let b = (0, d.registerGlobal)(i, this._proxyTracerProvider, h.DiagAPI.instance());
+                return b && this._proxyTracerProvider.setDelegate(a), b
+              }
+
+              getTracerProvider() {
+                return (0, d.getGlobal)(i) || this._proxyTracerProvider
+              }
+
+              getTracer(a, b) {
+                return this.getTracerProvider().getTracer(a, b)
+              }
+
+              disable() {
+                (0, d.unregisterGlobal)(i, h.DiagAPI.instance()), this._proxyTracerProvider = new e.ProxyTracerProvider
+              }
+            }
+
+            b.TraceAPI = j
+          }, 277: (a, b, c) => {
+            Object.defineProperty(b, "__esModule", {value: !0}), b.deleteBaggage = b.setBaggage = b.getActiveBaggage = b.getBaggage = void 0;
+            let d = c(491), e = (0, c(780).createContextKey)("OpenTelemetry Baggage Key");
+
+            function f(a) {
+              return a.getValue(e) || void 0
+            }
+
+            b.getBaggage = f, b.getActiveBaggage = function () {
+              return f(d.ContextAPI.getInstance().active())
+            }, b.setBaggage = function (a, b) {
+              return a.setValue(e, b)
+            }, b.deleteBaggage = function (a) {
+              return a.deleteValue(e)
+            }
+          }, 993: (a, b) => {
+            Object.defineProperty(b, "__esModule", {value: !0}), b.BaggageImpl = void 0;
+
+            class c {
+              constructor(a) {
+                this._entries = a ? new Map(a) : new Map
+              }
+
+              getEntry(a) {
+                let b = this._entries.get(a);
+                if (b) return Object.assign({}, b)
+              }
+
+              getAllEntries() {
+                return Array.from(this._entries.entries()).map(([a, b]) => [a, b])
+              }
+
+              setEntry(a, b) {
+                let d = new c(this._entries);
+                return d._entries.set(a, b), d
+              }
+
+              removeEntry(a) {
+                let b = new c(this._entries);
+                return b._entries.delete(a), b
+              }
+
+              removeEntries(...a) {
+                let b = new c(this._entries);
+                for (let c of a) b._entries.delete(c);
+                return b
+              }
+
+              clear() {
+                return new c
+              }
+            }
+
+            b.BaggageImpl = c
+          }, 830: (a, b) => {
+            Object.defineProperty(b, "__esModule", {value: !0}), b.baggageEntryMetadataSymbol = void 0, b.baggageEntryMetadataSymbol = Symbol("BaggageEntryMetadata")
+          }, 369: (a, b, c) => {
+            Object.defineProperty(b, "__esModule", {value: !0}), b.baggageEntryMetadataFromString = b.createBaggage = void 0;
+            let d = c(930), e = c(993), f = c(830), g = d.DiagAPI.instance();
+            b.createBaggage = function (a = {}) {
+              return new e.BaggageImpl(new Map(Object.entries(a)))
+            }, b.baggageEntryMetadataFromString = function (a) {
+              return "string" != typeof a && (g.error(`Cannot create baggage metadata from unknown type: ${typeof a}`), a = ""), {
+                __TYPE__: f.baggageEntryMetadataSymbol,
+                toString: () => a
+              }
+            }
+          }, 67: (a, b, c) => {
+            Object.defineProperty(b, "__esModule", {value: !0}), b.context = void 0, b.context = c(491).ContextAPI.getInstance()
+          }, 223: (a, b, c) => {
+            Object.defineProperty(b, "__esModule", {value: !0}), b.NoopContextManager = void 0;
+            let d = c(780);
+
+            class e {
+              active() {
+                return d.ROOT_CONTEXT
+              }
+
+              with(a, b, c, ...d) {
+                return b.call(c, ...d)
+              }
+
+              bind(a, b) {
+                return b
+              }
+
+              enable() {
+                return this
+              }
+
+              disable() {
+                return this
+              }
+            }
+
+            b.NoopContextManager = e
+          }, 780: (a, b) => {
+            Object.defineProperty(b, "__esModule", {value: !0}), b.ROOT_CONTEXT = b.createContextKey = void 0, b.createContextKey = function (a) {
+              return Symbol.for(a)
+            };
+
+            class c {
+              constructor(a) {
+                let b = this;
+                b._currentContext = a ? new Map(a) : new Map, b.getValue = a => b._currentContext.get(a), b.setValue = (a, d) => {
+                  let e = new c(b._currentContext);
+                  return e._currentContext.set(a, d), e
+                }, b.deleteValue = a => {
+                  let d = new c(b._currentContext);
+                  return d._currentContext.delete(a), d
+                }
+              }
+            }
+
+            b.ROOT_CONTEXT = new c
+          }, 506: (a, b, c) => {
+            Object.defineProperty(b, "__esModule", {value: !0}), b.diag = void 0, b.diag = c(930).DiagAPI.instance()
+          }, 56: (a, b, c) => {
+            Object.defineProperty(b, "__esModule", {value: !0}), b.DiagComponentLogger = void 0;
+            let d = c(172);
+
+            class e {
+              constructor(a) {
+                this._namespace = a.namespace || "DiagComponentLogger"
+              }
+
+              debug(...a) {
+                return f("debug", this._namespace, a)
+              }
+
+              error(...a) {
+                return f("error", this._namespace, a)
+              }
+
+              info(...a) {
+                return f("info", this._namespace, a)
+              }
+
+              warn(...a) {
+                return f("warn", this._namespace, a)
+              }
+
+              verbose(...a) {
+                return f("verbose", this._namespace, a)
+              }
+            }
+
+            function f(a, b, c) {
+              let e = (0, d.getGlobal)("diag");
+              if (e) return c.unshift(b), e[a](...c)
+            }
+
+            b.DiagComponentLogger = e
+          }, 972: (a, b) => {
+            Object.defineProperty(b, "__esModule", {value: !0}), b.DiagConsoleLogger = void 0;
+            let c = [{n: "error", c: "error"}, {n: "warn", c: "warn"}, {n: "info", c: "info"}, {
+              n: "debug",
+              c: "debug"
+            }, {n: "verbose", c: "trace"}];
+
+            class d {
+              constructor() {
+                for (let a = 0; a < c.length; a++) this[c[a].n] = function (a) {
+                  return function (...b) {
+                    if (console) {
+                      let c = console[a];
+                      if ("function" != typeof c && (c = console.log), "function" == typeof c) return c.apply(console, b)
+                    }
+                  }
+                }(c[a].c)
+              }
+            }
+
+            b.DiagConsoleLogger = d
+          }, 912: (a, b, c) => {
+            Object.defineProperty(b, "__esModule", {value: !0}), b.createLogLevelDiagLogger = void 0;
+            let d = c(957);
+            b.createLogLevelDiagLogger = function (a, b) {
+              function c(c, d) {
+                let e = b[c];
+                return "function" == typeof e && a >= d ? e.bind(b) : function () {
+                }
+              }
+
+              return a < d.DiagLogLevel.NONE ? a = d.DiagLogLevel.NONE : a > d.DiagLogLevel.ALL && (a = d.DiagLogLevel.ALL), b = b || {}, {
+                error: c("error", d.DiagLogLevel.ERROR),
+                warn: c("warn", d.DiagLogLevel.WARN),
+                info: c("info", d.DiagLogLevel.INFO),
+                debug: c("debug", d.DiagLogLevel.DEBUG),
+                verbose: c("verbose", d.DiagLogLevel.VERBOSE)
+              }
+            }
+          }, 957: (a, b) => {
+            Object.defineProperty(b, "__esModule", {value: !0}), b.DiagLogLevel = void 0, function (a) {
+              a[a.NONE = 0] = "NONE", a[a.ERROR = 30] = "ERROR", a[a.WARN = 50] = "WARN", a[a.INFO = 60] = "INFO", a[a.DEBUG = 70] = "DEBUG", a[a.VERBOSE = 80] = "VERBOSE", a[a.ALL = 9999] = "ALL"
+            }(b.DiagLogLevel || (b.DiagLogLevel = {}))
+          }, 172: (a, b, c) => {
+            Object.defineProperty(b, "__esModule", {value: !0}), b.unregisterGlobal = b.getGlobal = b.registerGlobal = void 0;
+            let d = c(200), e = c(521), f = c(130), g = e.VERSION.split(".")[0],
+              h = Symbol.for(`opentelemetry.js.api.${g}`), i = d._globalThis;
+            b.registerGlobal = function (a, b, c, d = !1) {
+              var f;
+              let g = i[h] = null != (f = i[h]) ? f : {version: e.VERSION};
+              if (!d && g[a]) {
+                let b = Error(`@opentelemetry/api: Attempted duplicate registration of API: ${a}`);
+                return c.error(b.stack || b.message), !1
+              }
+              if (g.version !== e.VERSION) {
+                let b = Error(`@opentelemetry/api: Registration of version v${g.version} for ${a} does not match previously registered API v${e.VERSION}`);
+                return c.error(b.stack || b.message), !1
+              }
+              return g[a] = b, c.debug(`@opentelemetry/api: Registered a global for ${a} v${e.VERSION}.`), !0
+            }, b.getGlobal = function (a) {
+              var b, c;
+              let d = null == (b = i[h]) ? void 0 : b.version;
+              if (d && (0, f.isCompatible)(d)) return null == (c = i[h]) ? void 0 : c[a]
+            }, b.unregisterGlobal = function (a, b) {
+              b.debug(`@opentelemetry/api: Unregistering a global for ${a} v${e.VERSION}.`);
+              let c = i[h];
+              c && delete c[a]
+            }
+          }, 130: (a, b, c) => {
+            Object.defineProperty(b, "__esModule", {value: !0}), b.isCompatible = b._makeCompatibilityCheck = void 0;
+            let d = c(521), e = /^(\d+)\.(\d+)\.(\d+)(-(.+))?$/;
+
+            function f(a) {
+              let b = new Set([a]), c = new Set, d = a.match(e);
+              if (!d) return () => !1;
+              let f = {major: +d[1], minor: +d[2], patch: +d[3], prerelease: d[4]};
+              if (null != f.prerelease) return function (b) {
+                return b === a
+              };
+
+              function g(a) {
+                return c.add(a), !1
+              }
+
+              return function (a) {
+                if (b.has(a)) return !0;
+                if (c.has(a)) return !1;
+                let d = a.match(e);
+                if (!d) return g(a);
+                let h = {major: +d[1], minor: +d[2], patch: +d[3], prerelease: d[4]};
+                if (null != h.prerelease || f.major !== h.major) return g(a);
+                if (0 === f.major) return f.minor === h.minor && f.patch <= h.patch ? (b.add(a), !0) : g(a);
+                return f.minor <= h.minor ? (b.add(a), !0) : g(a)
+              }
+            }
+
+            b._makeCompatibilityCheck = f, b.isCompatible = f(d.VERSION)
+          }, 886: (a, b, c) => {
+            Object.defineProperty(b, "__esModule", {value: !0}), b.metrics = void 0, b.metrics = c(653).MetricsAPI.getInstance()
+          }, 901: (a, b) => {
+            Object.defineProperty(b, "__esModule", {value: !0}), b.ValueType = void 0, function (a) {
+              a[a.INT = 0] = "INT", a[a.DOUBLE = 1] = "DOUBLE"
+            }(b.ValueType || (b.ValueType = {}))
+          }, 102: (a, b) => {
+            Object.defineProperty(b, "__esModule", {value: !0}), b.createNoopMeter = b.NOOP_OBSERVABLE_UP_DOWN_COUNTER_METRIC = b.NOOP_OBSERVABLE_GAUGE_METRIC = b.NOOP_OBSERVABLE_COUNTER_METRIC = b.NOOP_UP_DOWN_COUNTER_METRIC = b.NOOP_HISTOGRAM_METRIC = b.NOOP_COUNTER_METRIC = b.NOOP_METER = b.NoopObservableUpDownCounterMetric = b.NoopObservableGaugeMetric = b.NoopObservableCounterMetric = b.NoopObservableMetric = b.NoopHistogramMetric = b.NoopUpDownCounterMetric = b.NoopCounterMetric = b.NoopMetric = b.NoopMeter = void 0;
+
+            class c {
+              constructor() {
+              }
+
+              createHistogram(a, c) {
+                return b.NOOP_HISTOGRAM_METRIC
+              }
+
+              createCounter(a, c) {
+                return b.NOOP_COUNTER_METRIC
+              }
+
+              createUpDownCounter(a, c) {
+                return b.NOOP_UP_DOWN_COUNTER_METRIC
+              }
+
+              createObservableGauge(a, c) {
+                return b.NOOP_OBSERVABLE_GAUGE_METRIC
+              }
+
+              createObservableCounter(a, c) {
+                return b.NOOP_OBSERVABLE_COUNTER_METRIC
+              }
+
+              createObservableUpDownCounter(a, c) {
+                return b.NOOP_OBSERVABLE_UP_DOWN_COUNTER_METRIC
+              }
+
+              addBatchObservableCallback(a, b) {
+              }
+
+              removeBatchObservableCallback(a) {
+              }
+            }
+
+            b.NoopMeter = c;
+
+            class d {
+            }
+
+            b.NoopMetric = d;
+
+            class e extends d {
+              add(a, b) {
+              }
+            }
+
+            b.NoopCounterMetric = e;
+
+            class f extends d {
+              add(a, b) {
+              }
+            }
+
+            b.NoopUpDownCounterMetric = f;
+
+            class g extends d {
+              record(a, b) {
+              }
+            }
+
+            b.NoopHistogramMetric = g;
+
+            class h {
+              addCallback(a) {
+              }
+
+              removeCallback(a) {
+              }
+            }
+
+            b.NoopObservableMetric = h;
+
+            class i extends h {
+            }
+
+            b.NoopObservableCounterMetric = i;
+
+            class j extends h {
+            }
+
+            b.NoopObservableGaugeMetric = j;
+
+            class k extends h {
+            }
+
+            b.NoopObservableUpDownCounterMetric = k, b.NOOP_METER = new c, b.NOOP_COUNTER_METRIC = new e, b.NOOP_HISTOGRAM_METRIC = new g, b.NOOP_UP_DOWN_COUNTER_METRIC = new f, b.NOOP_OBSERVABLE_COUNTER_METRIC = new i, b.NOOP_OBSERVABLE_GAUGE_METRIC = new j, b.NOOP_OBSERVABLE_UP_DOWN_COUNTER_METRIC = new k, b.createNoopMeter = function () {
+              return b.NOOP_METER
+            }
+          }, 660: (a, b, c) => {
+            Object.defineProperty(b, "__esModule", {value: !0}), b.NOOP_METER_PROVIDER = b.NoopMeterProvider = void 0;
+            let d = c(102);
+
+            class e {
+              getMeter(a, b, c) {
+                return d.NOOP_METER
+              }
+            }
+
+            b.NoopMeterProvider = e, b.NOOP_METER_PROVIDER = new e
+          }, 200: function (a, b, c) {
+            var d = this && this.__createBinding || (Object.create ? function (a, b, c, d) {
+              void 0 === d && (d = c), Object.defineProperty(a, d, {
+                enumerable: !0, get: function () {
+                  return b[c]
+                }
+              })
+            } : function (a, b, c, d) {
+              void 0 === d && (d = c), a[d] = b[c]
+            }), e = this && this.__exportStar || function (a, b) {
+              for (var c in a) "default" === c || Object.prototype.hasOwnProperty.call(b, c) || d(b, a, c)
+            };
+            Object.defineProperty(b, "__esModule", {value: !0}), e(c(46), b)
+          }, 651: (a, b) => {
+            Object.defineProperty(b, "__esModule", {value: !0}), b._globalThis = void 0, b._globalThis = "object" == typeof globalThis ? globalThis : global
+          }, 46: function (a, b, c) {
+            var d = this && this.__createBinding || (Object.create ? function (a, b, c, d) {
+              void 0 === d && (d = c), Object.defineProperty(a, d, {
+                enumerable: !0, get: function () {
+                  return b[c]
+                }
+              })
+            } : function (a, b, c, d) {
+              void 0 === d && (d = c), a[d] = b[c]
+            }), e = this && this.__exportStar || function (a, b) {
+              for (var c in a) "default" === c || Object.prototype.hasOwnProperty.call(b, c) || d(b, a, c)
+            };
+            Object.defineProperty(b, "__esModule", {value: !0}), e(c(651), b)
+          }, 939: (a, b, c) => {
+            Object.defineProperty(b, "__esModule", {value: !0}), b.propagation = void 0, b.propagation = c(181).PropagationAPI.getInstance()
+          }, 874: (a, b) => {
+            Object.defineProperty(b, "__esModule", {value: !0}), b.NoopTextMapPropagator = void 0;
+
+            class c {
+              inject(a, b) {
+              }
+
+              extract(a, b) {
+                return a
+              }
+
+              fields() {
+                return []
+              }
+            }
+
+            b.NoopTextMapPropagator = c
+          }, 194: (a, b) => {
+            Object.defineProperty(b, "__esModule", {value: !0}), b.defaultTextMapSetter = b.defaultTextMapGetter = void 0, b.defaultTextMapGetter = {
+              get(a, b) {
+                if (null != a) return a[b]
+              }, keys: a => null == a ? [] : Object.keys(a)
+            }, b.defaultTextMapSetter = {
+              set(a, b, c) {
+                null != a && (a[b] = c)
+              }
+            }
+          }, 845: (a, b, c) => {
+            Object.defineProperty(b, "__esModule", {value: !0}), b.trace = void 0, b.trace = c(997).TraceAPI.getInstance()
+          }, 403: (a, b, c) => {
+            Object.defineProperty(b, "__esModule", {value: !0}), b.NonRecordingSpan = void 0;
+            let d = c(476);
+
+            class e {
+              constructor(a = d.INVALID_SPAN_CONTEXT) {
+                this._spanContext = a
+              }
+
+              spanContext() {
+                return this._spanContext
+              }
+
+              setAttribute(a, b) {
+                return this
+              }
+
+              setAttributes(a) {
+                return this
+              }
+
+              addEvent(a, b) {
+                return this
+              }
+
+              setStatus(a) {
+                return this
+              }
+
+              updateName(a) {
+                return this
+              }
+
+              end(a) {
+              }
+
+              isRecording() {
+                return !1
+              }
+
+              recordException(a, b) {
+              }
+            }
+
+            b.NonRecordingSpan = e
+          }, 614: (a, b, c) => {
+            Object.defineProperty(b, "__esModule", {value: !0}), b.NoopTracer = void 0;
+            let d = c(491), e = c(607), f = c(403), g = c(139), h = d.ContextAPI.getInstance();
+
+            class i {
+              startSpan(a, b, c = h.active()) {
+                var d;
+                if (null == b ? void 0 : b.root) return new f.NonRecordingSpan;
+                let i = c && (0, e.getSpanContext)(c);
+                return "object" == typeof (d = i) && "string" == typeof d.spanId && "string" == typeof d.traceId && "number" == typeof d.traceFlags && (0, g.isSpanContextValid)(i) ? new f.NonRecordingSpan(i) : new f.NonRecordingSpan
+              }
+
+              startActiveSpan(a, b, c, d) {
+                let f, g, i;
+                if (arguments.length < 2) return;
+                2 == arguments.length ? i = b : 3 == arguments.length ? (f = b, i = c) : (f = b, g = c, i = d);
+                let j = null != g ? g : h.active(), k = this.startSpan(a, f, j), l = (0, e.setSpan)(j, k);
+                return h.with(l, i, void 0, k)
+              }
+            }
+
+            b.NoopTracer = i
+          }, 124: (a, b, c) => {
+            Object.defineProperty(b, "__esModule", {value: !0}), b.NoopTracerProvider = void 0;
+            let d = c(614);
+
+            class e {
+              getTracer(a, b, c) {
+                return new d.NoopTracer
+              }
+            }
+
+            b.NoopTracerProvider = e
+          }, 125: (a, b, c) => {
+            Object.defineProperty(b, "__esModule", {value: !0}), b.ProxyTracer = void 0;
+            let d = new (c(614)).NoopTracer;
+
+            class e {
+              constructor(a, b, c, d) {
+                this._provider = a, this.name = b, this.version = c, this.options = d
+              }
+
+              startSpan(a, b, c) {
+                return this._getTracer().startSpan(a, b, c)
+              }
+
+              startActiveSpan(a, b, c, d) {
+                let e = this._getTracer();
+                return Reflect.apply(e.startActiveSpan, e, arguments)
+              }
+
+              _getTracer() {
+                if (this._delegate) return this._delegate;
+                let a = this._provider.getDelegateTracer(this.name, this.version, this.options);
+                return a ? (this._delegate = a, this._delegate) : d
+              }
+            }
+
+            b.ProxyTracer = e
+          }, 846: (a, b, c) => {
+            Object.defineProperty(b, "__esModule", {value: !0}), b.ProxyTracerProvider = void 0;
+            let d = c(125), e = new (c(124)).NoopTracerProvider;
+
+            class f {
+              getTracer(a, b, c) {
+                var e;
+                return null != (e = this.getDelegateTracer(a, b, c)) ? e : new d.ProxyTracer(this, a, b, c)
+              }
+
+              getDelegate() {
+                var a;
+                return null != (a = this._delegate) ? a : e
+              }
+
+              setDelegate(a) {
+                this._delegate = a
+              }
+
+              getDelegateTracer(a, b, c) {
+                var d;
+                return null == (d = this._delegate) ? void 0 : d.getTracer(a, b, c)
+              }
+            }
+
+            b.ProxyTracerProvider = f
+          }, 996: (a, b) => {
+            Object.defineProperty(b, "__esModule", {value: !0}), b.SamplingDecision = void 0, function (a) {
+              a[a.NOT_RECORD = 0] = "NOT_RECORD", a[a.RECORD = 1] = "RECORD", a[a.RECORD_AND_SAMPLED = 2] = "RECORD_AND_SAMPLED"
+            }(b.SamplingDecision || (b.SamplingDecision = {}))
+          }, 607: (a, b, c) => {
+            Object.defineProperty(b, "__esModule", {value: !0}), b.getSpanContext = b.setSpanContext = b.deleteSpan = b.setSpan = b.getActiveSpan = b.getSpan = void 0;
+            let d = c(780), e = c(403), f = c(491), g = (0, d.createContextKey)("OpenTelemetry Context Key SPAN");
+
+            function h(a) {
+              return a.getValue(g) || void 0
+            }
+
+            function i(a, b) {
+              return a.setValue(g, b)
+            }
+
+            b.getSpan = h, b.getActiveSpan = function () {
+              return h(f.ContextAPI.getInstance().active())
+            }, b.setSpan = i, b.deleteSpan = function (a) {
+              return a.deleteValue(g)
+            }, b.setSpanContext = function (a, b) {
+              return i(a, new e.NonRecordingSpan(b))
+            }, b.getSpanContext = function (a) {
+              var b;
+              return null == (b = h(a)) ? void 0 : b.spanContext()
+            }
+          }, 325: (a, b, c) => {
+            Object.defineProperty(b, "__esModule", {value: !0}), b.TraceStateImpl = void 0;
+            let d = c(564);
+
+            class e {
+              constructor(a) {
+                this._internalState = new Map, a && this._parse(a)
+              }
+
+              set(a, b) {
+                let c = this._clone();
+                return c._internalState.has(a) && c._internalState.delete(a), c._internalState.set(a, b), c
+              }
+
+              unset(a) {
+                let b = this._clone();
+                return b._internalState.delete(a), b
+              }
+
+              get(a) {
+                return this._internalState.get(a)
+              }
+
+              serialize() {
+                return this._keys().reduce((a, b) => (a.push(b + "=" + this.get(b)), a), []).join(",")
+              }
+
+              _parse(a) {
+                !(a.length > 512) && (this._internalState = a.split(",").reverse().reduce((a, b) => {
+                  let c = b.trim(), e = c.indexOf("=");
+                  if (-1 !== e) {
+                    let f = c.slice(0, e), g = c.slice(e + 1, b.length);
+                    (0, d.validateKey)(f) && (0, d.validateValue)(g) && a.set(f, g)
+                  }
+                  return a
+                }, new Map), this._internalState.size > 32 && (this._internalState = new Map(Array.from(this._internalState.entries()).reverse().slice(0, 32))))
+              }
+
+              _keys() {
+                return Array.from(this._internalState.keys()).reverse()
+              }
+
+              _clone() {
+                let a = new e;
+                return a._internalState = new Map(this._internalState), a
+              }
+            }
+
+            b.TraceStateImpl = e
+          }, 564: (a, b) => {
+            Object.defineProperty(b, "__esModule", {value: !0}), b.validateValue = b.validateKey = void 0;
+            let c = "[_0-9a-z-*/]", d = `[a-z]${c}{0,255}`, e = `[a-z0-9]${c}{0,240}@[a-z]${c}{0,13}`,
+              f = RegExp(`^(?:${d}|${e})$`), g = /^[ -~]{0,255}[!-~]$/, h = /,|=/;
+            b.validateKey = function (a) {
+              return f.test(a)
+            }, b.validateValue = function (a) {
+              return g.test(a) && !h.test(a)
+            }
+          }, 98: (a, b, c) => {
+            Object.defineProperty(b, "__esModule", {value: !0}), b.createTraceState = void 0;
+            let d = c(325);
+            b.createTraceState = function (a) {
+              return new d.TraceStateImpl(a)
+            }
+          }, 476: (a, b, c) => {
+            Object.defineProperty(b, "__esModule", {value: !0}), b.INVALID_SPAN_CONTEXT = b.INVALID_TRACEID = b.INVALID_SPANID = void 0;
+            let d = c(475);
+            b.INVALID_SPANID = "0000000000000000", b.INVALID_TRACEID = "00000000000000000000000000000000", b.INVALID_SPAN_CONTEXT = {
+              traceId: b.INVALID_TRACEID,
+              spanId: b.INVALID_SPANID,
+              traceFlags: d.TraceFlags.NONE
+            }
+          }, 357: (a, b) => {
+            Object.defineProperty(b, "__esModule", {value: !0}), b.SpanKind = void 0, function (a) {
+              a[a.INTERNAL = 0] = "INTERNAL", a[a.SERVER = 1] = "SERVER", a[a.CLIENT = 2] = "CLIENT", a[a.PRODUCER = 3] = "PRODUCER", a[a.CONSUMER = 4] = "CONSUMER"
+            }(b.SpanKind || (b.SpanKind = {}))
+          }, 139: (a, b, c) => {
+            Object.defineProperty(b, "__esModule", {value: !0}), b.wrapSpanContext = b.isSpanContextValid = b.isValidSpanId = b.isValidTraceId = void 0;
+            let d = c(476), e = c(403), f = /^([0-9a-f]{32})$/i, g = /^[0-9a-f]{16}$/i;
+
+            function h(a) {
+              return f.test(a) && a !== d.INVALID_TRACEID
+            }
+
+            function i(a) {
+              return g.test(a) && a !== d.INVALID_SPANID
+            }
+
+            b.isValidTraceId = h, b.isValidSpanId = i, b.isSpanContextValid = function (a) {
+              return h(a.traceId) && i(a.spanId)
+            }, b.wrapSpanContext = function (a) {
+              return new e.NonRecordingSpan(a)
+            }
+          }, 847: (a, b) => {
+            Object.defineProperty(b, "__esModule", {value: !0}), b.SpanStatusCode = void 0, function (a) {
+              a[a.UNSET = 0] = "UNSET", a[a.OK = 1] = "OK", a[a.ERROR = 2] = "ERROR"
+            }(b.SpanStatusCode || (b.SpanStatusCode = {}))
+          }, 475: (a, b) => {
+            Object.defineProperty(b, "__esModule", {value: !0}), b.TraceFlags = void 0, function (a) {
+              a[a.NONE = 0] = "NONE", a[a.SAMPLED = 1] = "SAMPLED"
+            }(b.TraceFlags || (b.TraceFlags = {}))
+          }, 521: (a, b) => {
+            Object.defineProperty(b, "__esModule", {value: !0}), b.VERSION = void 0, b.VERSION = "1.6.0"
+          }
+        }, c = {};
+
+        function d(a) {
+          var e = c[a];
+          if (void 0 !== e) return e.exports;
+          var f = c[a] = {exports: {}}, g = !0;
+          try {
+            b[a].call(f.exports, f, f.exports, d), g = !1
+          } finally {
+            g && delete c[a]
+          }
+          return f.exports
+        }
+
+        d.ab = __dirname + "/";
+        var e = {};
+        (() => {
+          Object.defineProperty(e, "__esModule", {value: !0}), e.trace = e.propagation = e.metrics = e.diag = e.context = e.INVALID_SPAN_CONTEXT = e.INVALID_TRACEID = e.INVALID_SPANID = e.isValidSpanId = e.isValidTraceId = e.isSpanContextValid = e.createTraceState = e.TraceFlags = e.SpanStatusCode = e.SpanKind = e.SamplingDecision = e.ProxyTracerProvider = e.ProxyTracer = e.defaultTextMapSetter = e.defaultTextMapGetter = e.ValueType = e.createNoopMeter = e.DiagLogLevel = e.DiagConsoleLogger = e.ROOT_CONTEXT = e.createContextKey = e.baggageEntryMetadataFromString = void 0;
+          var a = d(369);
+          Object.defineProperty(e, "baggageEntryMetadataFromString", {
+            enumerable: !0, get: function () {
+              return a.baggageEntryMetadataFromString
+            }
+          });
+          var b = d(780);
+          Object.defineProperty(e, "createContextKey", {
+            enumerable: !0, get: function () {
+              return b.createContextKey
+            }
+          }), Object.defineProperty(e, "ROOT_CONTEXT", {
+            enumerable: !0, get: function () {
+              return b.ROOT_CONTEXT
+            }
+          });
+          var c = d(972);
+          Object.defineProperty(e, "DiagConsoleLogger", {
+            enumerable: !0, get: function () {
+              return c.DiagConsoleLogger
+            }
+          });
+          var f = d(957);
+          Object.defineProperty(e, "DiagLogLevel", {
+            enumerable: !0, get: function () {
+              return f.DiagLogLevel
+            }
+          });
+          var g = d(102);
+          Object.defineProperty(e, "createNoopMeter", {
+            enumerable: !0, get: function () {
+              return g.createNoopMeter
+            }
+          });
+          var h = d(901);
+          Object.defineProperty(e, "ValueType", {
+            enumerable: !0, get: function () {
+              return h.ValueType
+            }
+          });
+          var i = d(194);
+          Object.defineProperty(e, "defaultTextMapGetter", {
+            enumerable: !0, get: function () {
+              return i.defaultTextMapGetter
+            }
+          }), Object.defineProperty(e, "defaultTextMapSetter", {
+            enumerable: !0, get: function () {
+              return i.defaultTextMapSetter
+            }
+          });
+          var j = d(125);
+          Object.defineProperty(e, "ProxyTracer", {
+            enumerable: !0, get: function () {
+              return j.ProxyTracer
+            }
+          });
+          var k = d(846);
+          Object.defineProperty(e, "ProxyTracerProvider", {
+            enumerable: !0, get: function () {
+              return k.ProxyTracerProvider
+            }
+          });
+          var l = d(996);
+          Object.defineProperty(e, "SamplingDecision", {
+            enumerable: !0, get: function () {
+              return l.SamplingDecision
+            }
+          });
+          var m = d(357);
+          Object.defineProperty(e, "SpanKind", {
+            enumerable: !0, get: function () {
+              return m.SpanKind
+            }
+          });
+          var n = d(847);
+          Object.defineProperty(e, "SpanStatusCode", {
+            enumerable: !0, get: function () {
+              return n.SpanStatusCode
+            }
+          });
+          var o = d(475);
+          Object.defineProperty(e, "TraceFlags", {
+            enumerable: !0, get: function () {
+              return o.TraceFlags
+            }
+          });
+          var p = d(98);
+          Object.defineProperty(e, "createTraceState", {
+            enumerable: !0, get: function () {
+              return p.createTraceState
+            }
+          });
+          var q = d(139);
+          Object.defineProperty(e, "isSpanContextValid", {
+            enumerable: !0, get: function () {
+              return q.isSpanContextValid
+            }
+          }), Object.defineProperty(e, "isValidTraceId", {
+            enumerable: !0, get: function () {
+              return q.isValidTraceId
+            }
+          }), Object.defineProperty(e, "isValidSpanId", {
+            enumerable: !0, get: function () {
+              return q.isValidSpanId
+            }
+          });
+          var r = d(476);
+          Object.defineProperty(e, "INVALID_SPANID", {
+            enumerable: !0, get: function () {
+              return r.INVALID_SPANID
+            }
+          }), Object.defineProperty(e, "INVALID_TRACEID", {
+            enumerable: !0, get: function () {
+              return r.INVALID_TRACEID
+            }
+          }), Object.defineProperty(e, "INVALID_SPAN_CONTEXT", {
+            enumerable: !0, get: function () {
+              return r.INVALID_SPAN_CONTEXT
+            }
+          });
+          let s = d(67);
+          Object.defineProperty(e, "context", {
+            enumerable: !0, get: function () {
+              return s.context
+            }
+          });
+          let t = d(506);
+          Object.defineProperty(e, "diag", {
+            enumerable: !0, get: function () {
+              return t.diag
+            }
+          });
+          let u = d(886);
+          Object.defineProperty(e, "metrics", {
+            enumerable: !0, get: function () {
+              return u.metrics
+            }
+          });
+          let v = d(939);
+          Object.defineProperty(e, "propagation", {
+            enumerable: !0, get: function () {
+              return v.propagation
+            }
+          });
+          let w = d(845);
+          Object.defineProperty(e, "trace", {
+            enumerable: !0, get: function () {
+              return w.trace
+            }
+          }), e.default = {
+            context: s.context,
+            diag: t.diag,
+            metrics: u.metrics,
+            propagation: v.propagation,
+            trace: w.trace
+          }
+        })(), a.exports = e
+      })()
+    }, 3459: (a, b, c) => {
+      "use strict";
+      Object.defineProperty(b, "__esModule", {value: !0}), !function (a, b) {
+        for (var c in b) Object.defineProperty(a, c, {enumerable: !0, get: b[c]})
+      }(b, {
+        HeadersAdapter: function () {
+          return f
+        }, ReadonlyHeadersError: function () {
+          return e
+        }
+      });
+      let d = c(1518);
+
+      class e extends Error {
+        constructor() {
+          super("Headers cannot be modified. Read more: https://nextjs.org/docs/app/api-reference/functions/headers")
+        }
+
+        static callable() {
+          throw new e
+        }
+      }
+
+      class f extends Headers {
+        constructor(a) {
+          super(), this.headers = new Proxy(a, {
+            get(b, c, e) {
+              if ("symbol" == typeof c) return d.ReflectAdapter.get(b, c, e);
+              let f = c.toLowerCase(), g = Object.keys(a).find(a => a.toLowerCase() === f);
+              if (void 0 !== g) return d.ReflectAdapter.get(b, g, e)
+            }, set(b, c, e, f) {
+              if ("symbol" == typeof c) return d.ReflectAdapter.set(b, c, e, f);
+              let g = c.toLowerCase(), h = Object.keys(a).find(a => a.toLowerCase() === g);
+              return d.ReflectAdapter.set(b, h ?? c, e, f)
+            }, has(b, c) {
+              if ("symbol" == typeof c) return d.ReflectAdapter.has(b, c);
+              let e = c.toLowerCase(), f = Object.keys(a).find(a => a.toLowerCase() === e);
+              return void 0 !== f && d.ReflectAdapter.has(b, f)
+            }, deleteProperty(b, c) {
+              if ("symbol" == typeof c) return d.ReflectAdapter.deleteProperty(b, c);
+              let e = c.toLowerCase(), f = Object.keys(a).find(a => a.toLowerCase() === e);
+              return void 0 === f || d.ReflectAdapter.deleteProperty(b, f)
+            }
+          })
+        }
+
+        static seal(a) {
+          return new Proxy(a, {
+            get(a, b, c) {
+              switch (b) {
+                case"append":
+                case"delete":
+                case"set":
+                  return e.callable;
+                default:
+                  return d.ReflectAdapter.get(a, b, c)
+              }
+            }
+          })
+        }
+
+        merge(a) {
+          return Array.isArray(a) ? a.join(", ") : a
+        }
+
+        static from(a) {
+          return a instanceof Headers ? a : new f(a)
+        }
+
+        append(a, b) {
+          let c = this.headers[a];
+          "string" == typeof c ? this.headers[a] = [c, b] : Array.isArray(c) ? c.push(b) : this.headers[a] = b
+        }
+
+        delete(a) {
+          delete this.headers[a]
+        }
+
+        get(a) {
+          let b = this.headers[a];
+          return void 0 !== b ? this.merge(b) : null
+        }
+
+        has(a) {
+          return void 0 !== this.headers[a]
+        }
+
+        set(a, b) {
+          this.headers[a] = b
+        }
+
+        forEach(a, b) {
+          for (let [c, d] of this.entries()) a.call(b, d, c, this)
+        }
+
+        * entries() {
+          for (let a of Object.keys(this.headers)) {
+            let b = a.toLowerCase(), c = this.get(b);
+            yield[b, c]
+          }
+        }
+
+        * keys() {
+          for (let a of Object.keys(this.headers)) {
+            let b = a.toLowerCase();
+            yield b
+          }
+        }
+
+        * values() {
+          for (let a of Object.keys(this.headers)) {
+            let b = this.get(a);
+            yield b
+          }
+        }
+
+        [Symbol.iterator]() {
+          return this.entries()
+        }
+      }
+    }, 3480: (a, b, c) => {
+      "use strict";
+      a.exports = c(5600)
+    }, 3745: (a, b, c) => {
+      "use strict";
+      c.d(b, {O: () => h});
+      var d = c(3024), e = c(6760);
+      let f = require("fast-glob");
+      var g = c(8378);
+
+      class h {
+        constructor(a, b) {
+          this.rootPath = a, this.parsedData = b
+        }
+
+        async calculateStats() {
+          await this.calculatePackageSizes();
+          let a = this.buildPackageStats(), b = this.buildProjectStats(a);
+          return {packageStats: a, projectStats: b}
+        }
+
+        async calculatePackageSizes() {
+          let a = await (0, f.glob)("**/node_modules", {
+            cwd: this.rootPath,
+            ignore: ["**/node_modules/**/node_modules/**"]
+          });
+          if (0 === a.length) {
+            let a = e.join(this.rootPath, "node_modules");
+            d.existsSync(a) && await this.calculateNodeModulesSizes(a)
+          } else for (let b of a) {
+            let a = e.join(this.rootPath, b);
+            await this.calculateNodeModulesSizes(a)
+          }
+          await this.calculateRootPackagesSizes()
+        }
+
+        async calculateNodeModulesSizes(a) {
+          try {
+            if (!d.existsSync(a)) return;
+            for (let b of d.readdirSync(a, {withFileTypes: !0})) if (b.isDirectory() && !b.name.startsWith(".")) {
+              let c = e.join(a, b.name);
+              if (b.name.startsWith("@")) await this.calculateScopedPackagesSizes(c, b.name); else {
+                let a = await this.calculatePackageSize(c);
+                this.updatePackageSize(b.name, a)
+              }
+            }
+          } catch (a) {
+          }
+        }
+
+        async calculateScopedPackagesSizes(a, b) {
+          try {
+            if (!d.existsSync(a)) return;
+            for (let c of d.readdirSync(a, {withFileTypes: !0})) if (c.isDirectory()) {
+              let d = e.join(a, c.name), f = `${b}/${c.name}`, g = await this.calculatePackageSize(d);
+              this.updatePackageSize(f, g)
+            }
+          } catch (a) {
+          }
+        }
+
+        async calculatePackageSize(a) {
+          try {
+            let b = e.join(a, "package.json");
+            if (!d.existsSync(b)) return await this.getFolderSize(a);
+            let c = d.readFileSync(b, "utf8"), f = JSON.parse(c);
+            return await this.calculateUniversalPackageSize(a, f)
+          } catch (b) {
+            return await this.getFolderSize(a)
+          }
+        }
+
+        async calculateUniversalPackageSize(a, b) {
+          let c = 0, f = e.join(a, "package.json");
+          if (d.existsSync(f) && (c += d.statSync(f).size), Array.isArray(b.files) && b.files.length > 0) {
+            for (let f of b.files) if ("string" == typeof f) {
+              let b = e.join(a, f);
+              if (d.existsSync(b)) {
+                let a = d.statSync(b);
+                a.isDirectory() ? c += await this.getFolderSize(b) : c += a.size
+              }
+            }
+            return c
+          }
+          for (let b of ["dist", "lib", "build", "es", "cjs", "esm", "umd"]) {
+            let f = e.join(a, b);
+            if (d.existsSync(f)) return c + await this.getFolderSize(f)
+          }
+          for (let f of [b.main, b.module, b.browser].filter(Boolean)) if ("string" == typeof f) {
+            let b = e.join(a, f);
+            if (d.existsSync(b)) {
+              let a = d.statSync(b);
+              a.isFile() ? c += a.size : a.isDirectory() && (c += await this.getFolderSize(b))
+            }
+          }
+          if (c > 0) return c;
+          let g = e.join(a, "src");
+          if (d.existsSync(g)) c += await this.getFolderSize(g); else for (let b of ["index.js", "index.mjs", "index.cjs", "index.ts"]) {
+            let f = e.join(a, b);
+            d.existsSync(f) && (c += d.statSync(f).size)
+          }
+          return c
+        }
+
+        async getFolderSize(a) {
+          try {
+            let b = 0;
+            for (let c of d.readdirSync(a, {withFileTypes: !0})) {
+              let f = e.join(a, c.name);
+              if (c.isDirectory()) {
+                let a = ["node_modules", ".git", "__tests__", "test", "tests", "spec", "specs", "docs", "doc", "documentation", "examples", "example", "demo", "demos", "coverage", ".nyc_output", "bench", "benchmark", "benchmarks", "fixtures", "fixture", "mocks", "mock", "__mocks__", "__snapshots__", ".github", ".vscode", ".idea", "__pycache__", ".cache", "stories", "story", ".storybook", "cypress", "e2e", "tmp", "temp", ".tmp", ".temp", "logs", "log", "locale", "locales", "lang", "languages", "i18n", "intl", "samples", "sample", "tutorials", "tutorial", "playground"],
+                  d = c.name.toLowerCase();
+                a.some(a => d === a || d.includes(a)) || (b += await this.getFolderSize(f))
+              } else if (c.isFile()) {
+                let a = c.name.toLowerCase();
+                if (!(a.startsWith(".") || a.endsWith(".config.js") || a.endsWith(".config.ts") || a.endsWith(".config.json") || a.includes(".test.") || a.includes(".spec.") || a.includes("-test.") || a.includes("-spec.") || a.includes(".dev.") || a.includes(".development.") || a.includes("-dev.") || a.includes("-development.") || a.endsWith(".md") || a.endsWith(".txt") || a.endsWith(".yml") || a.endsWith(".yaml") || a.endsWith(".map") || /^[a-z]{2}(-[a-z]{2})?\.js$/.test(a) || /^[a-z]{2}(_[a-z]{2})?\.js$/.test(a) || a.includes("locale"))) try {
+                  let a = d.statSync(f);
+                  b += a.size
+                } catch (a) {
+                }
+              }
+            }
+            return b
+          } catch (a) {
+            return 0
+          }
+        }
+
+        async calculateRootPackagesSizes() {
+          for (let a of this.parsedData.packages) {
+            let b = e.dirname(a.path), c = await this.getSourceCodeSize(b);
+            this.updatePackageSize(a.name, c)
+          }
+        }
+
+        updatePackageSize(a, b) {
+          let c = this.parsedData.installedPackages.get(a);
+          c ? this.parsedData.installedPackages.set(a, {
+            ...c,
+            size: b
+          }) : this.parsedData.installedPackages.set(a, {version: "1.0.0", size: b})
+        }
+
+        async getSourceCodeSize(a) {
+          try {
+            let b = 0;
+            for (let c of d.readdirSync(a, {withFileTypes: !0})) {
+              let f = e.join(a, c.name);
+              if (c.isDirectory()) ["app", "source", "src", "lib", "components", "pages", "utils", "hooks", "types", "styles"].includes(c.name) && (b += await this.getFolderSize(f)); else if (c.isFile()) {
+                let a = e.extname(c.name);
+                if ([".ts", ".tsx", ".js", ".jsx", ".json", ".css", ".scss", ".less", ".vue", ".proto"].includes(a)) try {
+                  let a = d.statSync(f);
+                  b += a.size
+                } catch (a) {
+                }
+              }
+            }
+            return Math.max(b, 1024)
+          } catch (a) {
+            return 1024
+          }
+        }
+
+        buildPackageStats() {
+          let a = new Map, b = new Set;
+          for (let c of (this.parsedData.packages.forEach(a => b.add(a.name)), this.parsedData.installedPackages.forEach((a, c) => b.add(c)), this.parsedData.dependencyTree.forEach((a, c) => {
+            b.add(c), a.forEach(a => b.add(a))
+          }), b)) {
+            let b = this.parsedData.installedPackages.get(c), d = void 0 !== b, e = b?.size || 0,
+              f = b?.version || "1.0.0", h = Array.from(this.parsedData.dependencyTree.get(c) || []),
+              i = this.getAllDependencies(c), j = this.countDependents(c);
+            a.set(c, {
+              name: c,
+              version: f,
+              size: e,
+              formattedSize: (0, g.X)(e),
+              isInstalled: d,
+              dependencyCount: h.length,
+              dependentCount: j,
+              directDependencies: h,
+              allDependencies: i
+            })
+          }
+          return a
+        }
+
+        getAllDependencies(a, b = new Set) {
+          if (b.has(a)) return [];
+          b.add(a);
+          let c = this.parsedData.dependencyTree.get(a) || new Set, d = new Set(c);
+          for (let a of c) this.getAllDependencies(a, new Set(b)).forEach(a => d.add(a));
+          return Array.from(d)
+        }
+
+        countDependents(a) {
+          let b = 0;
+          for (let [, c] of this.parsedData.dependencyTree.entries()) c.has(a) && b++;
+          return b
+        }
+
+        buildProjectStats(a) {
+          let b = new Set(this.parsedData.packages.map(a => a.name)), c = 0, d = 0, e = 0, f = new Map,
+            h = this.calculateDependencyLevels(), i = 0;
+          for (let [b, g] of a.entries()) {
+            c += g.size, g.isInstalled ? d++ : e++;
+            let a = h.get(b) || 0;
+            i = Math.max(i, a), f.set(a, (f.get(a) || 0) + 1)
+          }
+          let j = Array.from(a.values()).filter(a => a.size > 0).sort((a, b) => b.size - a.size).slice(0, 10),
+            k = Array.from(a.values()).sort((a, b) => b.dependencyCount - a.dependencyCount).slice(0, 10);
+          return {
+            totalPackages: a.size,
+            totalSize: c,
+            formattedTotalSize: (0, g.X)(c),
+            rootPackages: b.size,
+            installedPackages: d,
+            missingPackages: e,
+            maxDependencyLevel: i,
+            levelDistribution: f,
+            largestPackages: j,
+            heaviestDependencies: k
+          }
+        }
+
+        calculateDependencyLevels() {
+          let a = new Map, b = [];
+          for (let c of this.parsedData.packages) a.set(c.name, 0), b.push({packageName: c.name, level: 0});
+          for (; b.length > 0;) {
+            let {packageName: c, level: d} = b.shift(), e = this.parsedData.dependencyTree.get(c);
+            if (e) for (let c of e) {
+              let e = a.get(c), f = d + 1;
+              (void 0 === e || f < e) && (a.set(c, f), b.push({packageName: c, level: f}))
+            }
+          }
+          return a
+        }
+      }
+    }, 4e3: a => {
+      "use strict";
+      a.exports = require("@npmcli/arborist")
+    }, 5183: (a, b) => {
+      "use strict";
+
+      function c(a) {
+        return null !== a && "object" == typeof a && "then" in a && "function" == typeof a.then
+      }
+
+      Object.defineProperty(b, "__esModule", {value: !0}), Object.defineProperty(b, "isThenable", {
+        enumerable: !0,
+        get: function () {
+          return c
+        }
+      })
+    }, 5600: a => {
+      "use strict";
+      a.exports = require("next/dist/compiled/next-server/pages-api.runtime.prod.js")
+    }, 6435: (a, b) => {
+      "use strict";
+      Object.defineProperty(b, "M", {
+        enumerable: !0, get: function () {
+          return function a(b, c) {
+            return c in b ? b[c] : "then" in b && "function" == typeof b.then ? b.then(b => a(b, c)) : "function" == typeof b && "default" === c ? b : void 0
+          }
+        }
+      })
+    }, 6760: a => {
+      "use strict";
+      a.exports = require("node:path")
+    }, 8112: (a, b, c) => {
+      "use strict";
+      let d;
+      Object.defineProperty(b, "__esModule", {value: !0}), !function (a, b) {
+        for (var c in b) Object.defineProperty(a, c, {enumerable: !0, get: b[c]})
+      }(b, {
+        BubbledError: function () {
+          return m
+        }, SpanKind: function () {
+          return k
+        }, SpanStatusCode: function () {
+          return j
+        }, getTracer: function () {
+          return u
+        }, isBubbledError: function () {
+          return n
+        }
+      });
+      let e = c(8766), f = c(5183);
+      try {
+        d = c(3176)
+      } catch (a) {
+        d = c(3176)
+      }
+      let {context: g, propagation: h, trace: i, SpanStatusCode: j, SpanKind: k, ROOT_CONTEXT: l} = d;
+
+      class m extends Error {
+        constructor(a, b) {
+          super(), this.bubble = a, this.result = b
+        }
+      }
+
+      function n(a) {
+        return "object" == typeof a && null !== a && a instanceof m
+      }
+
+      let o = (a, b) => {
+        n(b) && b.bubble ? a.setAttribute("next.bubble", !0) : (b && a.recordException(b), a.setStatus({
+          code: j.ERROR,
+          message: null == b ? void 0 : b.message
+        })), a.end()
+      }, p = new Map, q = d.createContextKey("next.rootSpanId"), r = 0, s = {
+        set(a, b, c) {
+          a.push({key: b, value: c})
+        }
+      };
+
+      class t {
+        getTracerInstance() {
+          return i.getTracer("next.js", "0.0.1")
+        }
+
+        getContext() {
+          return g
+        }
+
+        getTracePropagationData() {
+          let a = g.active(), b = [];
+          return h.inject(a, b, s), b
+        }
+
+        getActiveScopeSpan() {
+          return i.getSpan(null == g ? void 0 : g.active())
+        }
+
+        withPropagatedContext(a, b, c) {
+          let d = g.active();
+          if (i.getSpanContext(d)) return b();
+          let e = h.extract(d, a, c);
+          return g.with(e, b)
+        }
+
+        trace(...a) {
+          var b;
+          let [c, d, h] = a, {fn: j, options: k} = "function" == typeof d ? {fn: d, options: {}} : {
+            fn: h,
+            options: {...d}
+          }, m = k.spanName ?? c;
+          if (!e.NextVanillaSpanAllowlist.includes(c) && "1" !== process.env.NEXT_OTEL_VERBOSE || k.hideSpan) return j();
+          let n = this.getSpanContext((null == k ? void 0 : k.parentSpan) ?? this.getActiveScopeSpan()), s = !1;
+          n ? (null == (b = i.getSpanContext(n)) ? void 0 : b.isRemote) && (s = !0) : (n = (null == g ? void 0 : g.active()) ?? l, s = !0);
+          let t = r++;
+          return k.attributes = {
+            "next.span_name": m,
+            "next.span_type": c, ...k.attributes
+          }, g.with(n.setValue(q, t), () => this.getTracerInstance().startActiveSpan(m, k, a => {
+            let b = "performance" in globalThis && "measure" in performance ? globalThis.performance.now() : void 0,
+              d = () => {
+                p.delete(t), b && process.env.NEXT_OTEL_PERFORMANCE_PREFIX && e.LogSpanAllowList.includes(c || "") && performance.measure(`${process.env.NEXT_OTEL_PERFORMANCE_PREFIX}:next-${(c.split(".").pop() || "").replace(/[A-Z]/g, a => "-" + a.toLowerCase())}`, {
+                  start: b,
+                  end: performance.now()
+                })
+              };
+            s && p.set(t, new Map(Object.entries(k.attributes ?? {})));
+            try {
+              if (j.length > 1) return j(a, b => o(a, b));
+              let b = j(a);
+              if ((0, f.isThenable)(b)) return b.then(b => (a.end(), b)).catch(b => {
+                throw o(a, b), b
+              }).finally(d);
+              return a.end(), d(), b
+            } catch (b) {
+              throw o(a, b), d(), b
+            }
+          }))
+        }
+
+        wrap(...a) {
+          let b = this, [c, d, f] = 3 === a.length ? a : [a[0], {}, a[1]];
+          return e.NextVanillaSpanAllowlist.includes(c) || "1" === process.env.NEXT_OTEL_VERBOSE ? function () {
+            let a = d;
+            "function" == typeof a && "function" == typeof f && (a = a.apply(this, arguments));
+            let e = arguments.length - 1, h = arguments[e];
+            if ("function" != typeof h) return b.trace(c, a, () => f.apply(this, arguments));
+            {
+              let d = b.getContext().bind(g.active(), h);
+              return b.trace(c, a, (a, b) => (arguments[e] = function (a) {
+                return null == b || b(a), d.apply(this, arguments)
+              }, f.apply(this, arguments)))
+            }
+          } : f
+        }
+
+        startSpan(...a) {
+          let [b, c] = a, d = this.getSpanContext((null == c ? void 0 : c.parentSpan) ?? this.getActiveScopeSpan());
+          return this.getTracerInstance().startSpan(b, c, d)
+        }
+
+        getSpanContext(a) {
+          return a ? i.setSpan(g.active(), a) : void 0
+        }
+
+        getRootSpanAttributes() {
+          let a = g.active().getValue(q);
+          return p.get(a)
+        }
+
+        setRootSpanAttribute(a, b) {
+          let c = g.active().getValue(q), d = p.get(c);
+          d && d.set(a, b)
+        }
+      }
+
+      let u = (() => {
+        let a = new t;
+        return () => a
+      })()
+    }, 8215: (a, b, c) => {
+      "use strict";
+      c.a(a, async (a, d) => {
+        try {
+          c.d(b, {Q: () => i});
+          var e = c(8378), f = c(2469), g = c(3745), h = a([f]);
+          f = (h.then ? (await h)() : h)[0];
+
+          class i {
+            constructor(a) {
+              this.parsedData = {
+                packages: [],
+                workspaces: [],
+                installedPackages: new Map,
+                dependencyTree: new Map
+              }, this.packageStats = null, this.rootPath = a
+            }
+
+            async buildGraph() {
+              let a = new f.o(this.rootPath);
+              this.parsedData = await a.parseProject();
+              let b = new g.O(this.rootPath, this.parsedData), {packageStats: c} = await b.calculateStats();
+              this.packageStats = c;
+              let {nodes: d, links: e} = this.buildTreeStructure();
+              this.calculateNodeMetrics(d, e);
+              let h = this.calculateDuplication(d);
+              return {
+                nodes: d,
+                links: e,
+                packages: this.parsedData.packages,
+                workspaces: this.parsedData.workspaces,
+                stats: {
+                  totalNodes: d.length,
+                  totalLinks: e.length,
+                  maxLevel: d.length > 0 ? Math.max(...d.map(a => a.dependencyLevel)) : 0,
+                  levelDistribution: this.calculateLevelDistribution(d),
+                  duplicatedPackages: h
+                }
+              }
+            }
+
+            buildTreeStructure() {
+              if (!this.parsedData || !this.packageStats) throw Error("Data not init");
+              let a = [], b = [], c = new Map, d = 0;
+              for (let e of this.parsedData.packages) {
+                if (d >= 1e5) break;
+                let f = {nodeCount: 0, maxDepth: 0}, g = this.createNode(e.name || "unnamed", 0, !0, [], c);
+                a.push(g), f.nodeCount++, d++, this.buildDependencyTreeOptimized(e, g, a, b, c, new Set([e.name || "unnamed"]), f, Math.min(1e5 - d, 5e4), 3), d += f.nodeCount - 1
+              }
+              return {nodes: a, links: b}
+            }
+
+            buildDependencyTreeOptimized(a, b, c, d, e, f, g, h, i) {
+              if (b.dependencyLevel >= i || g.nodeCount >= h) return;
+              g.maxDepth = Math.max(g.maxDepth, b.dependencyLevel);
+              let j = this.getDirectDependencies(a);
+              for (let [k, l] of Array.from(j.entries()).slice(0, 500)) {
+                if (f.has(k)) continue;
+                if (g.nodeCount >= h) break;
+                let j = this.createNode(k, b.dependencyLevel + 1, !1, [...b.parentPath, b.originalName], e);
+                c.push(j), g.nodeCount++, d.push({source: b.id, target: j.id, type: l});
+                let m = new Set(f);
+                m.add(a.name || b.originalName);
+                let n = this.findPackageJsonForDependency(k);
+                n ? this.buildDependencyTreeOptimized(n, j, c, d, e, m, g, h, i) : this.buildFromLockFileOptimized(k, j, c, d, e, m, g, h, i)
+              }
+            }
+
+            buildFromLockFileOptimized(a, b, c, d, e, f, g, h, i) {
+              if (b.dependencyLevel >= i || g.nodeCount >= h) return;
+              let j = this.parsedData.dependencyTree.get(a);
+              if (j && 0 !== j.size) for (let k of Array.from(j).slice(0, 100)) {
+                if (f.has(k) || g.nodeCount >= h) continue;
+                let j = this.createNode(k, b.dependencyLevel + 1, !1, [...b.parentPath, b.originalName], e);
+                if (c.push(j), g.nodeCount++, d.push({
+                  source: b.id,
+                  target: j.id,
+                  type: "dependency"
+                }), this.shouldContinueRecursion(k, b.dependencyLevel)) {
+                  let b = new Set(f);
+                  b.add(a), this.buildFromLockFileOptimized(k, j, c, d, e, b, g, h, i)
+                }
+              }
+            }
+
+            getDirectDependencies(a) {
+              let b = new Map;
+              for (let {source: c, type: d} of [{
+                source: a.dependencies,
+                type: "dependency"
+              }, {source: a.devDependencies, type: "devDependency"}, {
+                source: a.peerDependencies,
+                type: "peerDependency"
+              }, {
+                source: a.optionalDependencies,
+                type: "optionalDependency"
+              }]) if (c && "object" == typeof c) for (let a of Object.keys(c)) !b.has(a) && "string" == typeof a && a.trim() && b.set(a, d);
+              return b
+            }
+
+            shouldContinueRecursion(a, b) {
+              return b < 3
+            }
+
+            findPackageJsonForDependency(a) {
+              return this.parsedData.packages.find(b => b.name === a) || null
+            }
+
+            createNode(a, b, c, d, f) {
+              let g = f.get(a) || 0;
+              f.set(a, g + 1);
+              let h = 0 === g ? a : `${a}-duplicate-${g}`, i = this.packageStats?.get(a),
+                j = this.parsedData.installedPackages.get(a), k = this.parsedData.packages.find(b => b.name === a);
+              return {
+                id: h,
+                name: a,
+                originalName: a,
+                version: i?.version || j?.version || "1.0.0",
+                isRoot: c,
+                isInstalled: !!j,
+                depCount: 0,
+                inDegree: 0,
+                type: c ? "root" : "dependency",
+                packagePath: k?.path,
+                size: i?.size || j?.size || 0,
+                formattedSize: i?.formattedSize || (0, e.X)(j?.size || 0),
+                dependencyLevel: b,
+                workspaceId: this.getWorkspaceForPackage(a),
+                parentPath: d
+              }
+            }
+
+            calculateNodeMetrics(a, b) {
+              let c = new Map, d = new Map, f = new Map;
+              for (let b of a) c.set(b.id, b), d.set(b.id, 0), f.set(b.id, 0);
+              for (let a of b) {
+                let {sourceId: b, targetId: c} = (0, e.K)(a);
+                d.set(b, (d.get(b) || 0) + 1), f.set(c, (f.get(c) || 0) + 1)
+              }
+              for (let b of a) b.depCount = d.get(b.id) || 0, b.inDegree = f.get(b.id) || 0
+            }
+
+            calculateDuplication(a) {
+              let b = new Map;
+              for (let c of a) {
+                let a = b.get(c.originalName) || 0;
+                b.set(c.originalName, a + 1)
+              }
+              let c = new Map;
+              for (let [a, d] of b.entries()) d > 1 && c.set(a, d);
+              return c
+            }
+
+            calculateLevelDistribution(a) {
+              let b = new Map;
+              for (let c of a) {
+                let a = c.dependencyLevel;
+                b.set(a, (b.get(a) || 0) + 1)
+              }
+              return b
+            }
+
+            getWorkspaceForPackage(a) {
+              for (let b of this.parsedData.workspaces) if (b.packages.includes(a)) return b.name;
+              return "Unknown"
+            }
+          }
+
+          d()
+        } catch (a) {
+          d(a)
+        }
+      })
+    }, 8378: (a, b, c) => {
+      "use strict";
+
+      function d(a) {
+        return {
+          sourceId: "string" == typeof a.source ? a.source : a.source.id,
+          targetId: "string" == typeof a.target ? a.target : a.target.id
+        }
+      }
+
+      function e(a) {
+        if (0 === a) return "0 B";
+        let b = Math.floor(Math.log(a) / Math.log(1024));
+        return `${parseFloat((a / 1024 ** b).toFixed(1))} ${["B", "KB", "MB", "GB"][b]}`
+      }
+
+      c.d(b, {K: () => d, X: () => e})
+    }, 8667: (a, b) => {
+      "use strict";
+      Object.defineProperty(b, "A", {
+        enumerable: !0, get: function () {
+          return c
+        }
+      });
+      var c = function (a) {
+        return a.PAGES = "PAGES", a.PAGES_API = "PAGES_API", a.APP_PAGE = "APP_PAGE", a.APP_ROUTE = "APP_ROUTE", a.IMAGE = "IMAGE", a
+      }({})
+    }, 8766: (a, b) => {
+      "use strict";
+      Object.defineProperty(b, "__esModule", {value: !0}), !function (a, b) {
+        for (var c in b) Object.defineProperty(a, c, {enumerable: !0, get: b[c]})
+      }(b, {
+        AppRenderSpan: function () {
+          return i
+        }, AppRouteRouteHandlersSpan: function () {
+          return l
+        }, BaseServerSpan: function () {
+          return c
+        }, LoadComponentsSpan: function () {
+          return d
+        }, LogSpanAllowList: function () {
+          return p
+        }, MiddlewareSpan: function () {
+          return n
+        }, NextNodeServerSpan: function () {
+          return f
+        }, NextServerSpan: function () {
+          return e
+        }, NextVanillaSpanAllowlist: function () {
+          return o
+        }, NodeSpan: function () {
+          return k
+        }, RenderSpan: function () {
+          return h
+        }, ResolveMetadataSpan: function () {
+          return m
+        }, RouterSpan: function () {
+          return j
+        }, StartServerSpan: function () {
+          return g
+        }
+      });
+      var c = function (a) {
+        return a.handleRequest = "BaseServer.handleRequest", a.run = "BaseServer.run", a.pipe = "BaseServer.pipe", a.getStaticHTML = "BaseServer.getStaticHTML", a.render = "BaseServer.render", a.renderToResponseWithComponents = "BaseServer.renderToResponseWithComponents", a.renderToResponse = "BaseServer.renderToResponse", a.renderToHTML = "BaseServer.renderToHTML", a.renderError = "BaseServer.renderError", a.renderErrorToResponse = "BaseServer.renderErrorToResponse", a.renderErrorToHTML = "BaseServer.renderErrorToHTML", a.render404 = "BaseServer.render404", a
+      }(c || {}), d = function (a) {
+        return a.loadDefaultErrorComponents = "LoadComponents.loadDefaultErrorComponents", a.loadComponents = "LoadComponents.loadComponents", a
+      }(d || {}), e = function (a) {
+        return a.getRequestHandler = "NextServer.getRequestHandler", a.getServer = "NextServer.getServer", a.getServerRequestHandler = "NextServer.getServerRequestHandler", a.createServer = "createServer.createServer", a
+      }(e || {}), f = function (a) {
+        return a.compression = "NextNodeServer.compression", a.getBuildId = "NextNodeServer.getBuildId", a.createComponentTree = "NextNodeServer.createComponentTree", a.clientComponentLoading = "NextNodeServer.clientComponentLoading", a.getLayoutOrPageModule = "NextNodeServer.getLayoutOrPageModule", a.generateStaticRoutes = "NextNodeServer.generateStaticRoutes", a.generateFsStaticRoutes = "NextNodeServer.generateFsStaticRoutes", a.generatePublicRoutes = "NextNodeServer.generatePublicRoutes", a.generateImageRoutes = "NextNodeServer.generateImageRoutes.route", a.sendRenderResult = "NextNodeServer.sendRenderResult", a.proxyRequest = "NextNodeServer.proxyRequest", a.runApi = "NextNodeServer.runApi", a.render = "NextNodeServer.render", a.renderHTML = "NextNodeServer.renderHTML", a.imageOptimizer = "NextNodeServer.imageOptimizer", a.getPagePath = "NextNodeServer.getPagePath", a.getRoutesManifest = "NextNodeServer.getRoutesManifest", a.findPageComponents = "NextNodeServer.findPageComponents", a.getFontManifest = "NextNodeServer.getFontManifest", a.getServerComponentManifest = "NextNodeServer.getServerComponentManifest", a.getRequestHandler = "NextNodeServer.getRequestHandler", a.renderToHTML = "NextNodeServer.renderToHTML", a.renderError = "NextNodeServer.renderError", a.renderErrorToHTML = "NextNodeServer.renderErrorToHTML", a.render404 = "NextNodeServer.render404", a.startResponse = "NextNodeServer.startResponse", a.route = "route", a.onProxyReq = "onProxyReq", a.apiResolver = "apiResolver", a.internalFetch = "internalFetch", a
+      }(f || {}), g = function (a) {
+        return a.startServer = "startServer.startServer", a
+      }(g || {}), h = function (a) {
+        return a.getServerSideProps = "Render.getServerSideProps", a.getStaticProps = "Render.getStaticProps", a.renderToString = "Render.renderToString", a.renderDocument = "Render.renderDocument", a.createBodyResult = "Render.createBodyResult", a
+      }(h || {}), i = function (a) {
+        return a.renderToString = "AppRender.renderToString", a.renderToReadableStream = "AppRender.renderToReadableStream", a.getBodyResult = "AppRender.getBodyResult", a.fetch = "AppRender.fetch", a
+      }(i || {}), j = function (a) {
+        return a.executeRoute = "Router.executeRoute", a
+      }(j || {}), k = function (a) {
+        return a.runHandler = "Node.runHandler", a
+      }(k || {}), l = function (a) {
+        return a.runHandler = "AppRouteRouteHandlers.runHandler", a
+      }(l || {}), m = function (a) {
+        return a.generateMetadata = "ResolveMetadata.generateMetadata", a.generateViewport = "ResolveMetadata.generateViewport", a
+      }(m || {}), n = function (a) {
+        return a.execute = "Middleware.execute", a
+      }(n || {});
+      let o = ["Middleware.execute", "BaseServer.handleRequest", "Render.getServerSideProps", "Render.getStaticProps", "AppRender.fetch", "AppRender.getBodyResult", "Render.renderDocument", "Node.runHandler", "AppRouteRouteHandlers.runHandler", "ResolveMetadata.generateMetadata", "ResolveMetadata.generateViewport", "NextNodeServer.createComponentTree", "NextNodeServer.findPageComponents", "NextNodeServer.getLayoutOrPageModule", "NextNodeServer.startResponse", "NextNodeServer.clientComponentLoading"],
+        p = ["NextNodeServer.findPageComponents", "NextNodeServer.createComponentTree", "NextNodeServer.clientComponentLoading"]
+    }, 9046: (a, b, c) => {
+      "use strict";
+      Object.defineProperty(b, "__esModule", {value: !0}), !function (a, b) {
+        for (var c in b) Object.defineProperty(a, c, {enumerable: !0, get: b[c]})
+      }(b, {
+        ApiError: function () {
+          return r
+        }, COOKIE_NAME_PRERENDER_BYPASS: function () {
+          return l
+        }, COOKIE_NAME_PRERENDER_DATA: function () {
+          return m
+        }, RESPONSE_LIMIT_DEFAULT: function () {
+          return n
+        }, SYMBOL_CLEARED_COOKIES: function () {
+          return p
+        }, SYMBOL_PREVIEW_DATA: function () {
+          return o
+        }, checkIsOnDemandRevalidate: function () {
+          return k
+        }, clearPreviewData: function () {
+          return q
+        }, redirect: function () {
+          return j
+        }, sendError: function () {
+          return s
+        }, sendStatusCode: function () {
+          return i
+        }, setLazyProp: function () {
+          return t
+        }, wrapApiHandler: function () {
+          return h
+        }
+      });
+      let d = c(3459), e = c(1922), f = c(8112), g = c(8766);
+
+      function h(a, b) {
+        return (...c) => ((0, f.getTracer)().setRootSpanAttribute("next.route", a), (0, f.getTracer)().trace(g.NodeSpan.runHandler, {spanName: `executing api route (pages) ${a}`}, () => b(...c)))
+      }
+
+      function i(a, b) {
+        return a.statusCode = b, a
+      }
+
+      function j(a, b, c) {
+        if ("string" == typeof b && (c = b, b = 307), "number" != typeof b || "string" != typeof c) throw Object.defineProperty(Error("Invalid redirect arguments. Please use a single argument URL, e.g. res.redirect('/destination') or use a status code and URL, e.g. res.redirect(307, '/destination')."), "__NEXT_ERROR_CODE", {
+          value: "E389",
+          enumerable: !1,
+          configurable: !0
+        });
+        return a.writeHead(b, {Location: c}), a.write(c), a.end(), a
+      }
+
+      function k(a, b) {
+        let c = d.HeadersAdapter.from(a.headers);
+        return {
+          isOnDemandRevalidate: c.get(e.PRERENDER_REVALIDATE_HEADER) === b.previewModeId,
+          revalidateOnlyGenerated: c.has(e.PRERENDER_REVALIDATE_ONLY_GENERATED_HEADER)
+        }
+      }
+
+      let l = "__prerender_bypass", m = "__next_preview_data", n = 4194304, o = Symbol(m), p = Symbol(l);
+
+      function q(a, b = {}) {
+        if (p in a) return a;
+        let {serialize: d} = c(1254), e = a.getHeader("Set-Cookie");
+        return a.setHeader("Set-Cookie", [..."string" == typeof e ? [e] : Array.isArray(e) ? e : [], d(l, "", {
+          expires: new Date(0),
+          httpOnly: !0,
+          sameSite: "none",
+          secure: !0,
+          path: "/", ...void 0 !== b.path ? {path: b.path} : void 0
+        }), d(m, "", {
+          expires: new Date(0),
+          httpOnly: !0,
+          sameSite: "none",
+          secure: !0,
+          path: "/", ...void 0 !== b.path ? {path: b.path} : void 0
+        })]), Object.defineProperty(a, p, {value: !0, enumerable: !1}), a
+      }
+
+      class r extends Error {
+        constructor(a, b) {
+          super(b), this.statusCode = a
+        }
+      }
+
+      function s(a, b, c) {
+        a.statusCode = b, a.statusMessage = c, a.end(c)
+      }
+
+      function t({req: a}, b, c) {
+        let d = {configurable: !0, enumerable: !0}, e = {...d, writable: !0};
+        Object.defineProperty(a, b, {
+          ...d, get: () => {
+            let d = c();
+            return Object.defineProperty(a, b, {...e, value: d}), d
+          }, set: c => {
+            Object.defineProperty(a, b, {...e, value: c})
+          }
+        })
+      }
+    }, 9332: a => {
+      "use strict";
+      a.exports = import("glob")
+    }
+  };
+  var b = require("../../webpack-api-runtime.js");
+  b.C(a);
+  var c = b(b.s = 2464);
+  module.exports = c
+})();
